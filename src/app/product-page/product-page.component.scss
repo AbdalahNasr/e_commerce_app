@@ -1,0 +1,54 @@
+$primary-color:#5C59E8;
+.customer{
+    width: Fill (1,128px)px;
+height: Hug (60px)px;
+gap: 24px;
+opacity: 0px;
+
+}
+.customer-heading{
+    width: Fill (953px)px;
+height: Hug (60px)px;
+gap: 8px;
+opacity: 0px;
+
+}
+h2 {
+    margin-left: 28%;
+}
+.customer-links{
+    display: flex;
+    gap: 8px;
+    margin-left: 28%;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+
+}
+a:hover{
+color: $primary-color;
+}
+
+button{
+    background-color: $primary-color;
+    padding: 10px 14px 10px 14px;
+    gap: 4px;
+    border-radius: 8px ;
+    opacity: 0px;
+    display: block;
+    color: white;
+
+}
+.filter button{
+    background-color: transparent;
+    color: black;width: Hug (98px)px;
+    height: Hug (40px)px;
+    padding: 10px 14px 10px 14px;
+    gap: 8px;
+    border-radius: 8px ;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    
+}
