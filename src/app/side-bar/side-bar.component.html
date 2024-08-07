@@ -17,27 +17,45 @@
   </nav>
 </div> -->
 <!-- ************************ -->
-<button  class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ </head>
+ <body>
+  
+   <div class="sidebar" data-bs-target="#offcanvasScrolling">
+  
+     <button  class="btn btn-primary "  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+     
+     <div  class="offcanvas offcanvas-start  bg-black text-white sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+       <div class="offcanvas-header">
+         <a routerLink="/"   class="offcanvas-title" id="offcanvasLabel"><img src="../../assets/images/Logo.png" alt=""></a>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+       </div>
+       <div class="offcanvas-body">
+        <div class="list">
 
-<div  class="offcanvas offcanvas-start  bg-black text-white sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasLabel"><img src="../../assets/images/Logo.png" alt=""></h5>
-    <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-  </div>
-  <div class="offcanvas-body">
-    <ul>
-      <li><a href=""><img src="../../assets/icon.png" alt=""> productlist</a></li>
-      <li><a href=""><img src="../../assets/icon (1).png" alt=""> productlist</a></li>
-      <li><a href=""> <img src="../../assets/cart.png" alt=""> productlist</a></li>
-      <li><a href=""><img src="../../assets/users.png" alt=""> productlist</a></li>
-    </ul>
-    <ul class="top" >
-      <li><a href=""><img src="../../assets/earphone.png " alt=""> productlist</a></li>
-      <li><a href=""><img src="../../assets/gear.png" alt=""> productlist</a></li>
-    
-    </ul>
+          <ul>
+            <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" ><img src="../../assets/icon.png" alt=""> product</a></li>
+            <li> <a routerLink="/product" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/icon (1).png" alt=""> productList</a></li>
+            <li> <a routerLink="/orders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" ><img src="../../assets/cart.png" alt=""> orders</a></li>
+            <li> <a routerLink="/customers" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/users.png" alt=""> customers</a></li>
+          </ul>
+          <ul class="top" >
+            <li><a routerLink="/support" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/earphone.png " alt=""> support</a></li>
+            <li><a routerLink="/settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/gear.png" alt=""> settings</a></li>
+            
+          </ul>
+        </div>
       </div>
-</div>
+    </div>
+    <router-outlet></router-outlet>
+   </div>
+ </body>
+ </html>
 <!-- ************************* -->
 
 
@@ -87,6 +105,3 @@
   </div>
 </div> -->
 
-
-
-<router-outlet />
