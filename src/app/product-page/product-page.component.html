@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <app-side-bar/>
+
+    <div class="customer row collg-12">
+        <div class="customer-heading">
+    
+            <h2>customer</h2>
+            <div class="customer-links">
+        
+    
+                <a href="">dashboard</a>
+                <img src="../../assets/images/chevron right.png" alt="">
+                <a href="">customerList</a>
+                <div class="add-customer ">
+                  <button>  <i class="fasolid fa-plus"></i>Add customer</button>
+                  
+                </div> 
+            </div>
+        
+    
+        </div>   
+
+        <div class="container text-center pt-4 ">
+            <div class="row">
+              <div class="col-4">
+                <div class="input-group flex-nowrap">
+                    <button>
+                            <span class="input-group-text" id="addon-wrapping">
+                            <i class="fa-solid fa-search "></i></span>
+                        </button>
+                    <input type="search" class="form-control" placeholder="search product..." aria-label="search" aria-describedby="addon-wrapping">
+                  </div>
+              </div>
+              <div class="col-5"></div>
+              <div class="col-3 d-flex justify-content-around gap-2  ">
+                  <button type="button" class="btn btn"> <i class="fa-regular fa-calendar"></i>  SelectDates</button>
+                  <button type="button"  class="btn btn "><img src="../../assets/icon (2).png" alt=""> Filters</button>
+
+              </div>
+            </div>
+          </div>
+
+        <!-- <div class="filtration-conainer row col-lg-8 d-inline">
+
+            <div class="search  ">
+               <i class="fa-solid fa-search "></i><input  type="search" placeholder="search     " >
+            </div>
+            <div class="filter">
+        
+                <button><img src="../../assets/icon (2).png" alt=""> filter</button>
+            </div>
+        </div> -->
+
+<!-- ***************************** -->
+        <!-- <table class="table table-hover p-2  rounded ">
+            <thead class="table-heaing">
+              <td><div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle"  type="button" data-bs-toggle="dropdown" id="flexCheckDefault" aria-expanded="false">
+                 <button class="form-check-input" type="checkbox"></button> Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div></td>
+              <td >SKU</td>
+              <td>category</td>
+              <td><div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  stock
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+              </div></td>
+              <td><div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  price
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+              </div></td>
+              <td><div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+              </div></td>
+              <td>
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Added
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+              </div></td>
+              <td>Action</td>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>          
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>          
+              </tbody>
+            <thead class="table-heading">
+                <td>l</td>
+                <td>l</td>
+              </thead>
+  
+          </table> -->
+
+<!-- ****************************8 -->
+
+<div class="container text-center  rounded  ">
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1">
+      <div class="col">
+        <div class="p-1"><div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
+        Product
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku">SKU</tr>
+            <tr class="category">Category </tr>
+            <!-- <tr>     
+                <div class="p-1"><div class="dropdown" id="drop">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+         Stock
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+              </div>
+        </tr> -->
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+ stock
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+</div>
+      </div>
+      <div class="col d-flex ">
+        <tr>     
+            <div class="p-1"><div class="dropdown" id="drop">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     price
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+          </div>
+    </tr>
+
+        <tr class="status">
+            
+            <div class="p-1"><div class="dropdown ">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     status
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div></div>
+        </tr>
+
+      </div>
+      <div class="col">
+        <div class="p-1"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  Added
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div></div>
+      </div>
+      <div class="col">
+          Action
+</div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn">
+        <div class="status-btn">
+
+            <button type="button" class="btn btn-sm">Low Stack</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn">
+        <div class="status-btn-draft">
+
+            <button type="button" class="btn btn-sm"> Draft</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn">
+        <div class="status-btn-out">
+
+            <button type="button" class="btn btn-sm">out of stack</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn-puplished">
+        <div class="status-btn">
+
+            <button type="button" class="btn btn-sm"> puplished</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn">
+        <div class="status-btn">
+
+            <button type="button" class="btn btn-sm">Low Stack</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn">
+        <div class="status-btn">
+
+            <button type="button" class="btn btn-sm">Low Stack</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1 ">
+      <div class="col">
+        <div class="p-1 d-flex product-content">                <input class="form-check-input pr-1 " type="checkbox" value="" id="defaultCheck">
+            <div class="product ">
+
+            </div>
+            <div class="product-name ">
+
+                <p class="p-1">Hand made Pouch<br><span>3 variants</span></p>
+                
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-1 d-flex justify-content-between">
+            <tr class="sku-num"><span>302012</span></tr>
+            <tr><span>Bag&Bouch</span> </tr>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="p-1 "><span>10</span></div>
+      </div>
+      <div class="col d-flex justify-content-between">
+       <tr> <div class="p-1 price"><span>$121.00</span></div></tr>
+       <tr class="status-btn">
+        <div class="status-btn">
+
+            <button type="button" class="btn btn-sm">Low Stack</button>
+        </div>
+    </tr>
+      </div>
+      <div class="col">
+        <div class="p-1"><span>10 Oct 2024</span></div>
+      </div>
+      <div class="col">
+        <div class="p-1">
+            <div class="actions-icons w-80">
+
+                <span class="d-flex justify-content-around">
+                <i class="fa-solid fa-eye" ></i>
+                <i class="fa-solid fa-pen" ></i>
+                <i class="fa-solid fa-trash" ></i>
+            </span>
+            </div>
+    </div>
+      </div>
+    </div>
+    
+    <div class="row g-0 text-center bg-blach rounded text-white pt-3 ">
+      <!-- <div class="col-3 col-sm-6 col-md-8"> -->
+      <div class="col-4  ">
+        
+          <span class="pagination-span">showing 1-10 from 100</span>
+
+      </div>
+      <div class="col-8 col-md-6 pagination-list  ">
+
+        <!-- <nav aria-label="Page navigation example  d-flex justify-content-between">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link rounded-circle" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link rounded-circle" href="#">1</a></li>
+              <li class="page-item"><a class="page-link rounded-circle" href="#">2</a></li>
+              <li class="page-item"><a class="page-link rounded-circle" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link rounded-circle" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav> -->
+
+
+
+          <div class="container ">
+            <ul class="pagination  ">
+                          <li class="disabled"><a href="#">«</a></li>
+                          <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">...</a></li>
+                          <li><a href="#">»</a></li>
+                        </ul>
+            </div>
+    </div>
+    </div>
+  </div>
+
+    </div>
+    
+</body>
+</html>
+<!-- <p >product-page works!</p> -->
+
+<router-outlet />
