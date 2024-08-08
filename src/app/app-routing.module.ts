@@ -40,11 +40,16 @@ const routes: Routes = [
     path: 'support' ,
     component:SupportComponent
 },
+{ path:'productList',
+  component:ProductListComponent
+},
+
 //   {
 //     path: 'product-page' ,
 //     component:prod
 // },
   {
+  
     path: 'product' ,
     component:ProductPageComponent,
     children:[
