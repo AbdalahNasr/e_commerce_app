@@ -17,16 +17,12 @@
   </nav>
 </div> -->
 <!-- ************************ -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
- </head>
- <body>
   
-   <div class="sidebar" data-bs-target="#offcanvasScrolling">
+
+
+
+   <!-- <div class="sidebar" data-bs-target="#offcanvasScrolling">
+
   
      <button  class="btn btn-primary "  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
      
@@ -41,7 +37,7 @@
           <ul>
             <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" ><img src="../../assets/icon.png" alt=""> product</a></li>
             <li> <a routerLink="/productList" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/icon (1).png" alt=""> productList</a></li>
-            <li> <a routerLink="/orders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" ><img src="../../assets/cart.png" alt=""> orders</a></li>
+            <li> <a routerLink="/orders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"  ><img src="../../assets/cart.png" alt=""> orders</a><span class="nafications ">3</span></li>
             <li> <a routerLink="/customers" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/users.png" alt=""> customers</a></li>
           </ul>
           <ul class="top" >
@@ -53,19 +49,132 @@
       </div>
     </div>
     <router-outlet></router-outlet>
+   </div> -->
+ 
+ <!-- ***************** --> 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <div class="sidebar  text-dark " data-bs-target="#offcanvasScrolling ">
+   <div class="offcanvas offcanvas-start show  sidebar" 
+        data-bs-scroll="true" 
+        data-bs-backdrop="false" 
+        tabindex="-1" 
+        id="offcanvasScrolling" 
+        aria-labelledby="offcanvasScrollingLabel">
+        
+     <div class="offcanvas-header">
+       <a routerLink="/" class="offcanvas-title" id="offcanvasLabel">
+         <img src="/assets/images/Logo.png" alt="">
+       </a>
+     </div>
+     
+     <div class="offcanvas-body">
+       <div class="list">
+         <ul>
+           <li>
+             <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+               <img src="/assets/icon.png" alt=""> product
+             </a>
+           </li>
+           <li>
+             <a routerLink="/productList" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+               <img src="/assets/icon (1).png" alt=""> productList
+             </a>
+           </li>
+           <li>
+             <a routerLink="/orders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+               <img src="/assets/cart.png" alt=""> orders
+             </a>
+             <span class="nafications">3</span>
+           </li>
+           <li>
+             <a routerLink="/customers" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+              <i class="fa-solid fa-user-group  text-secondary "></i> customers
+             </a>
+           </li>
+         </ul>
+         <ul class="top">
+           <li>
+             <a routerLink="/support" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+               <img src="/assets/earphone.png" alt=""> support
+             </a>
+           </li>
+           <li>
+             <a routerLink="/settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+               <img src="/assets/gear.png" alt=""> settings
+             </a>
+           </li>
+         </ul>
+       </div>
+     </div>
    </div>
- </body>
- </html>
+   <router-outlet></router-outlet>
+ </div>
+
+
+
+
+
+
+
+
+
 <!-- ************************* -->
 
+<!-- <div class="sidebar">
+  <div class="offcanvas-header">
+    <a routerLink="/" class="offcanvas-title">
+      <img src="assets/images/Logo.png" alt="Logo" style="width: 40px;">
+    </a>
+  </div>
+  <div class="list">
+    <ul>
+      <li>
+        <a routerLink="/dashboard">
+          <img src="assets/icon.png" alt="">
+          <span class="nafications">3</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/productList">
+          <img src="assets/icon (1).png" alt="">
+        </a>
+      </li>
+      <li>
+        <a routerLink="/orders">
+          <img src="assets/cart.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a routerLink="/customers">
+          <img src="assets/users.png" alt="">
+        </a>
+      </li>
+    </ul>
+    <ul class="top">
+      <li>
+        <a routerLink="/support">
+          <img src="assets/earphone.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a routerLink="/settings">
+          <img src="assets/gear.png" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div> -->
 
+<!-- *********** -->
 
 
 
 
 <!-- <div class="offcanvas offcanvas-start show bg-black text-white  "  tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasLabel"><img src="../../assets/images/Logo.png" alt=""></h5>
+    <h5 class="offcanvas-title" id="offcanvasLabel"><img src="/assets/images/Logo.png" alt=""></h5>
     <button type="button" class="btn-close disabled" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body   ">
@@ -104,4 +213,5 @@
 
   </div>
 </div> -->
+
 
