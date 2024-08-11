@@ -1,117 +1,7 @@
-<!-- <div class="sidebar">
-  <div class="logo">
-    <a href=""><img src="../../assets/images/Logo.png" alt=""></a>
-  </div>
-  <nav class="nav flex-column bg-danger " id="sidebar-nav">
-    <div class="list-container">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link " aria-disabled="true">Disabled</a>
-      
-    </div>
-    <div class="bottom-icons">
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link " aria-disabled="true">Disabled</a>
-    </div>
-  </nav>
-</div> -->
-<!-- ************************ -->
-  
-
-
-
-   <!-- <div class="sidebar" data-bs-target="#offcanvasScrolling">
-
-  
-     <button  class="btn btn-primary "  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
-     
-     <div  class="offcanvas offcanvas-start  bg-black text-white sidebar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-       <div class="offcanvas-header">
-         <a routerLink="/"   class="offcanvas-title" id="offcanvasLabel"><img src="../../assets/images/Logo.png" alt=""></a>
-         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-       </div>
-       <div class="offcanvas-body">
-        <div class="list">
-
-          <ul>
-            <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" ><img src="../../assets/icon.png" alt=""> product</a></li>
-            <li> <a routerLink="/productList" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/icon (1).png" alt=""> productList</a></li>
-            <li> <a routerLink="/orders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"  ><img src="../../assets/cart.png" alt=""> orders</a><span class="nafications ">3</span></li>
-            <li> <a routerLink="/customers" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/users.png" alt=""> customers</a></li>
-          </ul>
-          <ul class="top" >
-            <li><a routerLink="/support" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/earphone.png " alt=""> support</a></li>
-            <li><a routerLink="/settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"><img src="../../assets/gear.png" alt=""> settings</a></li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-    <router-outlet></router-outlet>
-   </div> -->
  
  <!-- ***************** --> 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <div class="sidebar  text-dark " data-bs-target="#offcanvasScrolling ">
-   <div class="offcanvas offcanvas-start show  sidebar" 
-        data-bs-scroll="true" 
-        data-bs-backdrop="false" 
-        tabindex="-1" 
-        id="offcanvasScrolling" 
-        aria-labelledby="offcanvasScrollingLabel">
-        
-     <div class="offcanvas-header">
-       <a routerLink="/" class="offcanvas-title" id="offcanvasLabel">
-         <img src="/assets/images/Logo.png" alt="">
-       </a>
-     </div>
-     
-     <div class="offcanvas-body">
-       <div class="list">
-         <ul>
-           <li>
-             <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-               <img src="/assets/icon.png" alt=""> product
-             </a>
-           </li>
-           <li>
-             <a routerLink="/productList" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-               <img src="/assets/icon (1).png" alt=""> productList
-             </a>
-           </li>
-           <li>
-             <a routerLink="/orders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-               <img src="/assets/cart.png" alt=""> orders
-             </a>
-             <span class="nafications">3</span>
-           </li>
-           <li>
-             <a routerLink="/customers" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-              <i class="fa-solid fa-user-group  text-secondary "></i> customers
-             </a>
-           </li>
-         </ul>
-         <ul class="top">
-           <li>
-             <a routerLink="/support" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-               <img src="/assets/earphone.png" alt=""> support
-             </a>
-           </li>
-           <li>
-             <a routerLink="/settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-               <img src="/assets/gear.png" alt=""> settings
-             </a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </div>
-   <router-outlet></router-outlet>
- </div>
-
 
 
 
@@ -122,96 +12,102 @@
 
 <!-- ************************* -->
 
-<!-- <div class="sidebar">
-  <div class="offcanvas-header">
-    <a routerLink="/" class="offcanvas-title">
-      <img src="assets/images/Logo.png" alt="Logo" style="width: 40px;">
-    </a>
-  </div>
-  <div class="list">
-    <ul>
-      <li>
-        <a routerLink="/dashboard">
-          <img src="assets/icon.png" alt="">
-          <span class="nafications">3</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/productList">
-          <img src="assets/icon (1).png" alt="">
-        </a>
-      </li>
-      <li>
-        <a routerLink="/orders">
-          <img src="assets/cart.png" alt="">
-        </a>
-      </li>
-      <li>
-        <a routerLink="/customers">
-          <img src="assets/users.png" alt="">
-        </a>
-      </li>
-    </ul>
-    <ul class="top">
-      <li>
-        <a routerLink="/support">
-          <img src="assets/earphone.png" alt="">
-        </a>
-      </li>
-      <li>
-        <a routerLink="/settings">
-          <img src="assets/gear.png" alt="">
-        </a>
-      </li>
-    </ul>
-  </div>
-</div> -->
-
-<!-- *********** -->
 
 
 
 
-<!-- <div class="offcanvas offcanvas-start show bg-black text-white  "  tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasLabel"><img src="/assets/images/Logo.png" alt=""></h5>
-    <button type="button" class="btn-close disabled" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body   ">
-<ul>
-  <li><a href=""><img src="../../assets/icon.png" alt=""> productlist</a></li>
-  <li><a href=""><img src="../../assets/icon (1).png" alt=""> productlist</a></li>
-  <li><a href=""> <img src="../../assets/cart.png" alt=""> productlist</a></li>
-  <li><a href=""><img src="../../assets/users.png" alt=""> productlist</a></li>
-</ul>
-<ul >
-  <li><a href=""><img src="../../assets/earphone.png " alt=""> productlist</a></li>
-  <li><a href=""><img src="../../assets/gear.png" alt=""> productlist</a></li>
 
-</ul>
-  </div>
-</div> -->
+<!-- *****************************last result side bar handling ********************************* -->
 
 
-<!-- <div class="sidebar">
-  <div class="logo"><a href="#">
-    <img src="../../assets/images/Logo.png" alt="" srcset=""></a>
-  </div>
-  <div class="layout">
-<ul>
-  <li><a href="">dashboard</a></li>
-  <li><a href="">dashboard</a></li>
-  <li><a href="">dashboard</a></li>
-  <li><a href="">dashboard</a></li>
-</ul>
-<div class="bottom-icons">
-</div>
-<ul>
-  <li><a href="">dashboard</a></li>
-  <li><a href="">dashboard</a></li>
-</ul>
 
-  </div>
-</div> -->
+<div class="container-fluid " >
+  
+  <div class=" nav-content d-flex flex-column  justify-content-between col-auto  col-2   min-vh-100 " >
+  
+      <div class="logo mt-4 ">
+          <a href="" class="text-white  text-center d-flex text-decoration-none ms-2  " role="button">
+              <img class="fs-5 w-100 rounded mx-auto d-block " src="assets/images/Logo.png" alt="">
+          </a>
+          <br class="text-white">
+          <ul
+              class="nav nav-pills flex-column mt-2 mt-sm-0 " id="menu" >
+  
+  
+  
+              <li class="nav-item">
+                  <a href="#" class="nav-link " aria-current="page" >
+                      <img src="assets/icon.png" alt=""> <span class="d-none d-sm-inline ms-2">
+                        Dashboard
+                      </span>
+  
+                      
+                      </a >
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link  " data-bs-toggle="collapse" aria-current="page" >
+  
+                  <img src="assets/icon (1).png" alt=""> <span class=" d-none d-sm-inline ms-2">productList</span>
+                  </a>
+         
+              </li>
+              <li class="nav-item ">
+                  <a href="#" class="nav-link  " data-bs-toggle="collapse" aria-current="page" >
+                      <img src="assets/icon.png" alt=""> <span class="d-none d-sm-inline ms-2">
+                          Orders
+                      </span>
+  
+                      
+                      </a >
+  </li>  
+              <li class="nav-item ">
+                  <a href="#" class="nav-link  " data-bs-toggle="collapse" aria-current="page" >
+                    <i class="fa-solid fa-users"></i>
+                      <!-- <img src="assets/icon.png" alt=""> -->
+                       <span class="d-none d-sm-inline ms-2">
+                          customers
+                      </span>
+  
+                      
+                      </a >
+  </li>  
+           
+          </ul>
+          
+          
+      </div>
+      <div class="bottom-list">
+  
+          <ul
+              class="nav nav-pills flex-column mb-3 mt-2 mt-sm-0 " id="menu" >
+  
+  
+  
+              <li class="nav-item">
+                  <a href="#" class="nav-link  " data-bs-toggle="collapse" aria-current="page" >
+  
+                  <img src="../../assets/earphone.png" alt=""> <span class=" d-none d-sm-inline ms-2">support</span>
+                  </a>
+         
+              </li>
+              <li class="nav-item ">
+                  <a href="#" class="nav-link  " data-bs-toggle="collapse" aria-current="page" >
+                      <img src="../../assets/gear.png" alt=""> <span class=" d-none d-sm-inline ms-2">
+  settings
+                      </span>
+  
+                      
+                      </a >
+  </li>      
+          </ul>
+        </div>
+        
+      </div>
+
+  
+</div>  
 
 
+
+
+    <router-outlet />

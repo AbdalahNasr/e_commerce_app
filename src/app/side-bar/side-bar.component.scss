@@ -3,108 +3,15 @@ $secondry-color:#E0E2E7;
 $low-stack-color:#E46A11;
 $buplished-color:#0D894F;
 $out-stack-color:#F04438;
-.sidebar {
-    width:   264px ;
-    // height:  100vh;
-    gap: 0px;
-    border: 0px 1px 0px 0px;
-    opacity: 0px;
-    
-    display: flex;
-    
-    ;
-}
-.sidebar button{
-    margin: 0;
-}
-.logo{
-    width:  264px;
-    height: 64px;
-    padding: 8px 20px 8px 20px;
-    gap: 10px;
-    opacity: 0px;
-    
-
-}
-.logo img{
-    width: 224px;
-height: 34px;
-gap: 12px;
-opacity: 0px;
-
-}
-.list{
-    display: flex;
-    flex-wrap: wrap;
-
-}
-.bottom-icons{
-    width:  264px;
-    height:  136px;
-    padding: 24px 18px 24px 18px;
-    gap: 8px;
-    opacity: 0px;
-    
-    
-}
-a{
-    text-decoration: none;
-    color: black;
-
-}
-ul{
-    
-    list-style: none;
-    width: 228px;
-height: 40px;
-padding: 8px 12px 8px 12px;
-gap: 8px;
-border-radius: 8px 0px 0px 0px;
-opacity: 0px;
-
-}
-li{
-    width:  228px;
-height: 40px;
-padding: 8px 12px 8px 12px;
-gap: 8px;
-border-radius: 8px 0px 0px 0px;
-opacity: 0px;
-
-}
-.top{
-    padding-top: 500px;
-}
-.active-link {
-    width:  100%;
-    height: 40px;
-    padding: 8px 54px 8px 24px;
-    gap: 8px;
-    border-radius: 10px ;
-    opacity: 0px;
-    background-color: $primary-color;
-      }
-li  :hover{
-    width:  100%;
-    height: 40px;
-    border-radius: 10px ;
-    padding: 8px 54px 8px 24px;
-    background-color: $primary-color;
-      }
-      .nafications{
-        color: white;
-        width: 10px;
-height: 10px;
-padding: 1px 6px 1px 6px;
-gap: 8px;
-border-radius: 100px ;
-opacity: 0px;
-background-color: $out-stack-color;
-margin-left: 60px;
-
-      }
-
 
 
 // ********************************
-
+.nav-pills li a:hover{
+    background-color: $primary-color;
+    }
+.nav-pills a{
+    color:black
+}
+.nav-content{
+    background-color: $secondry-color;
+}
