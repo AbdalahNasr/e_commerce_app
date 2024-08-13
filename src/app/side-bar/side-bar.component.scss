@@ -1,0 +1,23 @@
+$primary-color:#5C59E8;
+$secondry-color:#E0E2E7;
+$low-stack-color:#E46A11;
+$buplished-color:#0D894F;
+$out-stack-color:#F04438;
+
+
+// ********************************
+.nav-pills li a:hover{
+    background-color: $primary-color;
+    margin: 0px 20px 0px 20px ;
+    }
+//   .contain-badge li a:hover{
+//     background-color: $primary-color;
+//     margin: 0px 5px 0px 5px ;
+
+// }
+.nav-pills a{
+    color:black
+}
+.nav-content{
+    background-color: $secondry-color;
+}

@@ -1,0 +1,69 @@
+$primary-color:#5C59E8;
+$secondry-color:#E0E2E7;
+$low-stack-color:#E46A11;
+$buplished-color:#0D894F;
+$out-stack-color:#F04438;
+.side-bar {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.add-customer{
+    // width:  800px;
+    // padding-left: 370px;
+    gap: 24px;
+}
+.add-customer button{
+    background-color: $primary-color;
+    width:  138px;
+    padding: 10px;
+    // height:  40px;
+    // color: white;
+    //  gap: 4px;
+    border-radius: 8px  ;
+    opacity: 0px;
+    
+    }
+
+.add-customer-btn{
+    background-color: $primary-color;
+;}
+
+.add-customer-btn i{
+    color: $secondry-color;
+}
+a{
+    color: black;
+}
+a:hover{
+color: $primary-color;
+
+}
+.dashboard-link {
+color: $primary-color;
+
+}
+.filter-Dates-btn button{
+    border: 1px solid;
+    
+    }
+    .filter-Dates-btn button{
+    border: 1px solid;
+    }
+
+
+    //********************************************** 
+    .has-search .form-control-feedback {
+        right: initial;
+        left: 0;
+        color: #ccc;
+    }
+    
+    .has-search .form-control {
+        padding-right: 12px;
+        padding-left: 34px;
+    }
+
+    
+    
