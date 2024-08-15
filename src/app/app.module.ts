@@ -13,6 +13,8 @@ import { SignupComponent } from './signup/signup.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SupportComponent } from './support/support.component';
 import { UsersComponent } from './users/users.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { UsersComponent } from './users/users.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
