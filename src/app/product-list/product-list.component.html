@@ -1,357 +1,357 @@
 
-<!-- <app-side-bar></app-side-bar> -->
-<app-product-page></app-product-page>
-<div class="container-fluid">
-  <div class="row   pt-2">
 
-        <!-- Sidebar as an <aside> element -->
-          <aside class="col-lg-2 col-sm-1 col-3 bg-black">
-            <h2>hello</h2>
-        </aside>
-    
-    <div class="col-9">
+<div class=" col-12 d-flex overflow-x-hidden ">
+  <div class="col-2 ">
+  <app-side-bar></app-side-bar>
 
-      <div class="table-responsive col-12">
-        <table class="table table-hover text-secondary">
-            <thead>
-                <tr>
-                    <th>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
-                    </th>
-                    <th><div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Products
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </div></th>
-                    <th><button
-                      type="button"
-                      class="btn "
-                      data-bs-toggle="button"
-                      aria-pressed="false"
-                      autocomplete="off"
-                    >
-                      SKU
+</div>
+<div class=" container col-12 ">
+  
+  <app-product-page></app-product-page>
+  <div class="table-responsive  col-11 pt-3">
+    <table class="table table-hover text-secondary">
+        <thead>
+            <tr>
+                <th>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
+                </th>
+                <th><div class="dropdown">
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Products
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div></th>
+                <th><button
+                  type="button"
+                  class="btn "
+                  data-bs-toggle="button"
+                  aria-pressed="false"
+                  autocomplete="off"
+                >
+                  SKU
+                </button>
+                </th>
+                <th><button
+                  type="button"
+                  class="btn "
+                  data-bs-toggle="button"
+                  aria-pressed="false"
+                  autocomplete="off"
+                >
+                Category
+                </button>
+                </th>
+                <th><div class="dropdown">
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Stock
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div></th>
+                <th><div class="dropdown">
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Price
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div></th>
+                <th><div class="dropdown">
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Status
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div></th>
+                <th><div class="dropdown">
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Added
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div></th>
+                <th><button
+                  type="button"
+                  class="btn "
+                  data-bs-toggle="button"
+                  aria-pressed="false"
+                  autocomplete="off"
+                >
+                  Action
+                </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
+                </td>
+                <td>
+                  <div class="product-field d-flex ">
+                    <img src="../../assets/images/Img.png" alt="">
+                    <p>Hand made pouch
+                      <br>
+                      <span>
+                        3variants
+  
+                      </span>
+                    </p>
+                </div></td>
+                <td><div class="sku-field">
+                  <p>302012</p>
+                </div></td>
+                <td><p>Bag & Pouch</p></td>
+                <td >
+                  <div class="container">
+  
+                    <p>10</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="container">
+                    <p>$121.00</p>
+                  </div>
+                </td>
+  
+                <td>
+                  <div class="container">
+  
+                    <button class="btn object-fit-contain border rounded-5 low-stack-btn px-2">low stack</button>
+                  </div>
+                </td>
+                <td><div class="container">
+                  <p>29 Dec 2022</p>
+                </div></td>
+                <td><div class="container d-flex justify-content-end">
+                  <button class="btn">
+                    <i class="fa-solid fa-eye"></i> 
+  
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-pen"></i>
+  
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-trash"></i> 
+  
+                  </button>
+                 
+                </div></td>
+            </tr>
+            <tr>
+                <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
+                </td>
+                <td>
+                  <div class="product-field d-flex ">
+                    <img src="../../assets/images/Img.png" alt="">
+                    <p>Hand made pouch
+                      <br>
+                      <span>
+                        3variants
+  
+                      </span>
+                    </p>
+                </div></td>
+                <td><div class="sku-field">
+                  <p>302012</p>
+                </div></td>
+                <td><p>Bag & Pouch</p></td>
+                <td >
+                  <div class="container">
+  
+                    <p>10</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="container">
+                    <p>$121.00</p>
+                  </div>
+                </td>
+  
+                <td>
+                  <div class="container">
+  
+                    <button class="btn object-fit-contain border rounded-5 low-stack-btn px-2">low stack</button>
+                  </div>
+                </td>
+                <td><div class="container">
+                  <p>29 Dec 2022</p>
+                </div></td>
+                <td><div class="container d-flex justify-content-end">
+                  <button class="btn">
+                    <i class="fa-solid fa-eye"></i> 
+  
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-pen"></i>
+  
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-trash"></i> 
+  
+                  </button>
+                 
+                </div></td>
+            </tr>
+            <tr>
+                <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
+                </td>
+                <td>
+                  <div class="product-field d-flex ">
+                    <img src="../../assets/images/Img.png" alt="">
+                    <p>Hand made pouch
+                      <br>
+                      <span>
+                        3variants
+  
+                      </span>
+                    </p>
+                </div></td>
+                <td><div class="sku-field">
+                  <p>302012</p>
+                </div></td>
+                <td><p>Bag & Pouch</p></td>
+                <td >
+                  <div class="container">
+  
+                    <p>10</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="container">
+                    <p>$121.00</p>
+                  </div>
+                </td>
+  
+                <td>
+                  <div class="container">
+  
+                    <button class="btn object-fit-contain border rounded-5 draf-btn px-2">Draft</button>
+                  </div>
+                </td>
+                <td><div class="container">
+                  <p>29 Dec 2022</p>
+                </div></td>
+                <td><div class="container d-flex justify-content-end">
+                  <button class="btn">
+                    <i class="fa-solid fa-eye"></i> 
+  
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-pen"></i>
+  
+                  </button>
+                  <button class="btn">
+                    <i class="fa-solid fa-trash"></i> 
+  
+                  </button>
+                 
+                </div></td>
+            </tr>
+              <tr>
+                  <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
+                  </td>
+                  <td>
+                    <div class="product-field d-flex ">
+                      <img src="../../assets/images/Img.png" alt="">
+                      <p>Hand made pouch
+                        <br>
+                        <span>
+                          3variants
+  
+                        </span>
+                      </p>
+                  </div></td>
+                  <td><div class="sku-field">
+                    <p>302012</p>
+                  </div></td>
+                  <td><p>Bag & Pouch</p></td>
+                  <td >
+                    <div class="container">
+  
+                      <p>10</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="container">
+                      <p>$121.00</p>
+                    </div>
+                  </td>
+  
+                  <td>
+                    <div class="container">
+  
+                      <button class="btn object-fit-contain border rounded-5 published-btn px-2">Puplished</button>
+                    </div>
+                  </td>
+                  <td><div class="container">
+                    <p>29 Dec 2022</p>
+                  </div></td>
+                  <td><div class="container d-flex justify-content-end">
+                    <button class="btn">
+                      <i class="fa-solid fa-eye"></i> 
+  
                     </button>
-                    </th>
-                    <th><button
-                      type="button"
-                      class="btn "
-                      data-bs-toggle="button"
-                      aria-pressed="false"
-                      autocomplete="off"
-                    >
-                    Category
+                    <button class="btn">
+                      <i class="fa-solid fa-pen"></i>
+  
                     </button>
-                    </th>
-                    <th><div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Stock
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </div></th>
-                    <th><div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Price
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </div></th>
-                    <th><div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Status
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </div></th>
-                    <th><div class="dropdown">
-                      <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Added
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </div></th>
-                    <th><button
-                      type="button"
-                      class="btn "
-                      data-bs-toggle="button"
-                      aria-pressed="false"
-                      autocomplete="off"
-                    >
-                      Action
+                    <button class="btn">
+                      <i class="fa-solid fa-trash"></i> 
+  
                     </button>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
-                    </td>
-                    <td>
-                      <div class="product-field d-flex ">
-                        <img src="../../assets/images/Img.png" alt="">
-                        <p>Hand made pouch
-                          <br>
-                          <span>
-                            3variants
-  
-                          </span>
-                        </p>
-                    </div></td>
-                    <td><div class="sku-field">
-                      <p>302012</p>
-                    </div></td>
-                    <td><p>Bag & Pouch</p></td>
-                    <td >
-                      <div class="container">
-
-                        <p>10</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="container">
-                        <p>$121.00</p>
-                      </div>
-                    </td>
-
-                    <td>
-                      <div class="container">
-
-                        <button class="btn object-fit-contain border rounded-5 low-stack-btn px-2">low stack</button>
-                      </div>
-                    </td>
-                    <td><div class="container">
-                      <p>29 Dec 2022</p>
-                    </div></td>
-                    <td><div class="container d-flex justify-content-end">
-                      <button class="btn">
-                        <i class="fa-solid fa-eye"></i> 
-
-                      </button>
-                      <button class="btn">
-                        <i class="fa-solid fa-pen"></i>
-
-                      </button>
-                      <button class="btn">
-                        <i class="fa-solid fa-trash"></i> 
-
-                      </button>
-                     
-                    </div></td>
-                </tr>
-                <tr>
-                    <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
-                    </td>
-                    <td>
-                      <div class="product-field d-flex ">
-                        <img src="../../assets/images/Img.png" alt="">
-                        <p>Hand made pouch
-                          <br>
-                          <span>
-                            3variants
-  
-                          </span>
-                        </p>
-                    </div></td>
-                    <td><div class="sku-field">
-                      <p>302012</p>
-                    </div></td>
-                    <td><p>Bag & Pouch</p></td>
-                    <td >
-                      <div class="container">
-
-                        <p>10</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="container">
-                        <p>$121.00</p>
-                      </div>
-                    </td>
-
-                    <td>
-                      <div class="container">
-
-                        <button class="btn object-fit-contain border rounded-5 low-stack-btn px-2">low stack</button>
-                      </div>
-                    </td>
-                    <td><div class="container">
-                      <p>29 Dec 2022</p>
-                    </div></td>
-                    <td><div class="container d-flex justify-content-end">
-                      <button class="btn">
-                        <i class="fa-solid fa-eye"></i> 
-
-                      </button>
-                      <button class="btn">
-                        <i class="fa-solid fa-pen"></i>
-
-                      </button>
-                      <button class="btn">
-                        <i class="fa-solid fa-trash"></i> 
-
-                      </button>
-                     
-                    </div></td>
-                </tr>
-                <tr>
-                    <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
-                    </td>
-                    <td>
-                      <div class="product-field d-flex ">
-                        <img src="../../assets/images/Img.png" alt="">
-                        <p>Hand made pouch
-                          <br>
-                          <span>
-                            3variants
-  
-                          </span>
-                        </p>
-                    </div></td>
-                    <td><div class="sku-field">
-                      <p>302012</p>
-                    </div></td>
-                    <td><p>Bag & Pouch</p></td>
-                    <td >
-                      <div class="container">
-
-                        <p>10</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="container">
-                        <p>$121.00</p>
-                      </div>
-                    </td>
-
-                    <td>
-                      <div class="container">
-
-                        <button class="btn object-fit-contain border rounded-5 draf-btn px-2">Draft</button>
-                      </div>
-                    </td>
-                    <td><div class="container">
-                      <p>29 Dec 2022</p>
-                    </div></td>
-                    <td><div class="container d-flex justify-content-end">
-                      <button class="btn">
-                        <i class="fa-solid fa-eye"></i> 
-
-                      </button>
-                      <button class="btn">
-                        <i class="fa-solid fa-pen"></i>
-
-                      </button>
-                      <button class="btn">
-                        <i class="fa-solid fa-trash"></i> 
-
-                      </button>
-                     
-                    </div></td>
-                </tr>
-                  <tr>
-                      <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
-                      </td>
-                      <td>
-                        <div class="product-field d-flex ">
-                          <img src="../../assets/images/Img.png" alt="">
-                          <p>Hand made pouch
-                            <br>
-                            <span>
-                              3variants
-    
-                            </span>
-                          </p>
-                      </div></td>
-                      <td><div class="sku-field">
-                        <p>302012</p>
-                      </div></td>
-                      <td><p>Bag & Pouch</p></td>
-                      <td >
-                        <div class="container">
-
-                          <p>10</p>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="container">
-                          <p>$121.00</p>
-                        </div>
-                      </td>
-
-                      <td>
-                        <div class="container">
-
-                          <button class="btn object-fit-contain border rounded-5 published-btn px-2">Puplished</button>
-                        </div>
-                      </td>
-                      <td><div class="container">
-                        <p>29 Dec 2022</p>
-                      </div></td>
-                      <td><div class="container d-flex justify-content-end">
-                        <button class="btn">
-                          <i class="fa-solid fa-eye"></i> 
-
-                        </button>
-                        <button class="btn">
-                          <i class="fa-solid fa-pen"></i>
-
-                        </button>
-                        <button class="btn">
-                          <i class="fa-solid fa-trash"></i> 
-
-                        </button>
-                      
-                      </div></td>
-                  </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-      <footer class="col-9  pt-2  ">
-        <div class="row d-flex justify-content-between align-items-center">
-          <div class="col-lg-3 pt-2">
-            <span> showing 1-10 from100</span>
-            <!-- <div class="col-lg-3 col-sm-8"></div> -->
-          </div>
-          <div class="d-grid  pt-1 d-md-flex justify-content-md-end">
-
-            <ul class="pagination ">
-                          <li class="disabled"><a href="#">«</a></li>
-                          <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                          <li><a href="#">...</a></li>
-                          <li><a href="#">»</a></li>
-                        </ul>
-          </div>
-        </div>
-  
-
-      </footer>
-
-    </div>
-    </div>
-     </div>
+                  
+                  </div></td>
+              </tr>
+        </tbody>
+    </table>
   </div>
+  <div class="row">
+    <footer class="col-11  pt-2  ">
+      <div class="row d-flex justify-content-between align-items-center">
+        <div class="col-lg-3 pt-2">
+          <span> showing 1-10 from100</span>
+          <!-- <div class="col-lg-3 col-sm-8"></div> -->
+        </div>
+        <div class="d-grid  pt-1 d-md-flex  justify-content-md-end">
+  
+          <ul class="pagination ">
+                        <li class="disabled"><a href="#">«</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">»</a></li>
+                      </ul>
+        </div>
+      </div>
+  
+  
+    </footer>
+  
+  </div>
+</div>
+
+    </div>
+
+     
+  <!-- </div> -->
 
     <!-- <div class="container text-center  rounded  ">
     <div class="row row-cols-1 row-cols-lg-6 g-1 g-lg-1">

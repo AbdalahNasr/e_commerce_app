@@ -1,14 +1,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<div class="container-fluid">
+<div class="container">
 
-  <div class="row d-flex">
-    <!-- Sidebar as an <aside> element -->
-    <aside class="col-lg-2 col-sm-1 col-3 bg-black">
-        <h2>hello</h2>
-    </aside>
-  
-    <!-- Main Content -->
-    <main class="col-lg-9  col-9 pt-3">
+  <div class="row d-flex ">
+    <main class=" col-11 pt-3">
       <div class="row d-flex justify-content-between align-items-center">
         <div class="col-lg-3">
           <h2>customer</h2>
@@ -25,16 +19,12 @@
           </button>
         </div>
       </div>
+      <div class="row pt-1 d-flex">
+        <!-- Sidebar as an <aside> element -->
+        <!-- Repeated Main Content -->
+      </div>
     </main>
-  </div>
-  
-  <div class="row pt-1 d-flex">
-    <!-- Sidebar as an <aside> element -->
-      <aside class="col-lg-2 col-sm-1 col-3 bg-black">
-        <h2>hello</h2>
-    </aside>
-    <!-- Repeated Main Content -->
-    <main class="col-lg-9  col-9">
+    <main class="  col-12">
       <div class="row d-flex justify-content-between align-items-center">
         <div class="col-lg-3 ">
           <div class="form-group has-feedback  has-search">
@@ -42,7 +32,7 @@
             <input type="text" class="form-control  " placeholder="Search...">
           </div>
         </div>
-        <div class="col-lg-6 d-flex"></div>
+        <div class="col-lg-5  d-none d-sm-inline d-flex"></div>
         <div class="col  d-flex justify-content-center flex-wrap gap-2">
           <button type="button" class="btn btn-outline rounded">
             <i class="fa-regular fa-calendar"></i> Select Dates
@@ -55,6 +45,7 @@
     </main>
   </div>
 </div>
+  
 
 
 <router-outlet />

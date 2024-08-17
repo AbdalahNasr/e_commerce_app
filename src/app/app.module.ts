@@ -15,6 +15,7 @@ import { SupportComponent } from './support/support.component';
 import { UsersComponent } from './users/users.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     SettingsComponent,
     SupportComponent,
-    UsersComponent
+    UsersComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

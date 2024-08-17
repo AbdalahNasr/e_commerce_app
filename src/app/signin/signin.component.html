@@ -3,7 +3,7 @@
   <div class="container-fluid content  min-vh-100 col-12 ">
 
     <div class="wrapper">
-        <form  #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <form  #userForm="ngForm" (ngSubmit)="onSubmit()" >
           {{userForm.value | json}}
           <hr>
           {{userForm.valid | json}}
@@ -14,23 +14,32 @@
             <p class="text">Sign in to your account</p>       
           <div class="input-box">
             <label for="Email">E-mail</label>
-          <input type="email" placeholder="E-mail" name="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="" [(ngModel)]="userModel.email"  required>
-          <small class="text-danger" [class.d-none]="email.valid || email.untouched">email is required and must be 10 digits</small>      
+          <input type="email"
+           placeholder="E-mail"
+            name="email"
+            #email="ngModel"
+           [class.is-invalid]="email.invalid && email.touched" 
+          pattern="" 
+          [(ngModel)]="userModel.email"  required>
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">
+            email is required and must be 10 digits</small>      
 
          </div>
          <div class="input-box">
             <label for="password">password</label>
 
            <input type="password" 
-             placeholder="password" name="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="" [(ngModel)]="userModel.password"  required>
+             placeholder="password" name="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" 
+             pattern="" [(ngModel)]="userModel.password"  required>
            <i class='bx bxs-lock-alt' ></i>
            <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is invalid</small>      
 
           </div>
           <div  class="remember-forgot">
-            <label><input class="rounded" type="checkbox" name="rememberMe" #rememberMe [(ngModel)]="userModel.rememberMe " >Remember me</label>
+            <label><input class="rounded" type="checkbox" name="rememberMe" 
+              #rememberMe [(ngModel)]="userModel.rememberMe " >Remember me</label>
             <a href="#">Forgot your Password?</a>
-          </div>
+          </div> 
           
           <button [disabled]="userForm.form.invalid || topicHasError"  type="submit" class="btn">Login</button>
         </form>

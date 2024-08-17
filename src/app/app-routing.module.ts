@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SupportComponent } from './support/support.component';
 import { UsersComponent } from './users/users.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -25,8 +26,8 @@ const routes: Routes = [
     component:SigninComponent
 },
   {
-    path: 'signup' ,
-    component:SignupComponent
+    path: 'addProduct' ,
+    component:AddProductComponent
 },
   {
     path: 'customers' ,

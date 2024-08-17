@@ -13,7 +13,7 @@ import { User } from './user';
 export class SigninComponent {
 
   topicHasError= false ;
-  userModel = new User('Robo@test.com','123456',false)
+  userModel = new User('','',false)
 
 
 onSubmit(){
