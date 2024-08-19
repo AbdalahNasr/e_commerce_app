@@ -3,7 +3,7 @@
   <div class="container-fluid content  min-vh-100 col-12 ">
 
     <div class="wrapper">
-        <form  #userForm="ngForm" (ngSubmit)="onSubmit()" >
+        <form  #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" >
           {{userForm.value | json}}
           <hr>
           {{userForm.valid | json}}

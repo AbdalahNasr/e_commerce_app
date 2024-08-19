@@ -11,6 +11,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { SupportComponent } from './support/support.component';
 import { UsersComponent } from './users/users.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
+import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,12 @@ const routes: Routes = [
 },
 { path:'productList',
   component:ProductListComponent
+},
+{ path:'home',
+  component:ClientHomePageComponent
+},
+{ path:'login',
+  component:ClientLoginPageComponent
 },
 
 //   {

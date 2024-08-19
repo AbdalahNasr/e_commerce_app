@@ -14,8 +14,12 @@ import { SettingsComponent } from './settings/settings.component';
 import { SupportComponent } from './support/support.component';
 import { UsersComponent } from './users/users.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormGroupName, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
+import { NavbarComponentComponent } from './navbar-component/navbar-component.component';
+import { FooterComponent } from './footer/footer.component';
+import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
+import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,20 @@ import { AddProductComponent } from './add-product/add-product.component';
     SettingsComponent,
     SupportComponent,
     UsersComponent,
-    AddProductComponent
+    AddProductComponent,
+    NavbarComponentComponent,
+    FooterComponent,
+    ClientHomePageComponent,
+    ClientLoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

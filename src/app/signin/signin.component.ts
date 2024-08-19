@@ -16,8 +16,10 @@ export class SigninComponent {
   userModel = new User('','',false)
 
 
-onSubmit(){
-  debugger;
+  onSubmit(userForm:any){
+  console.log(userForm);
+  
+  // debugger;
   console.log(this.userModel);
 }
 
