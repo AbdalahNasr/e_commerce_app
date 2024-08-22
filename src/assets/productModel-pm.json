@@ -8,16 +8,6 @@
       "isDeleted": false,
       "createdOn": "2024-08-20T12:00:00Z",
       "updatedOn": "2024-08-21T12:00:00Z"
-    },
-    {
-      "name": "Product 2",
-      "description": "Description for Product 2",
-      "type": "Type B",
-      "status": "Unavailable",
-      "amount": 150.0,
-      "isDeleted": false,
-      "createdOn": "2024-08-19T12:00:00Z",
-      "updatedOn": "2024-08-21T12:00:00Z"
     }
   ]
   

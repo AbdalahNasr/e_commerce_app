@@ -11,7 +11,7 @@ import { User } from './user';
 
 })
 export class SigninComponent {
-
+  isVisible= false ;
   topicHasError= false ;
   userModel = new User('','',false)
 

@@ -97,7 +97,7 @@
                 <td>
                   <div class="product-field d-flex ">
                     <img src="assets/images/Img.png" alt="">
-                    <p>Hand made pouch
+                    <p *ngFor="let product of data">{{product.name}}
                       <br>
                       <span>
                         3variants

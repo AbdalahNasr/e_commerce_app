@@ -19,5 +19,19 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
- <app-side-bar class="d-flex"></app-side-bar>
-<router-outlet></router-outlet>
+<div class="conrainer-fluied overflow-x-hidden">
+
+  <div class="row">
+  
+    <div class="col-lg-2 ">
+    
+      <app-side-bar   *ngIf="showSidebar"></app-side-bar>
+    </div>
+    <div class="col-lg-10">
+    
+      <router-outlet>
+        
+      </router-outlet>
+    </div>
+  </div>
+</div>

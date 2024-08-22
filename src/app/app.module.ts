@@ -20,7 +20,7 @@ import { NavbarComponentComponent } from './navbar-component/navbar-component.co
 import { FooterComponent } from './footer/footer.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
-
+import {HttpClientModule  } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,7 @@ import { ClientLoginPageComponent } from './client-login-page/client-login-page.
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    HttpClientModule
   
   ],
   providers: [],
