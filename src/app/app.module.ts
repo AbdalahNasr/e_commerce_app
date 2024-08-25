@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
 import {HttpClientModule  } from "@angular/common/http";
+import { ProductDetailsComponent } from './product-details/product-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {HttpClientModule  } from "@angular/common/http";
     NavbarComponentComponent,
     FooterComponent,
     ClientHomePageComponent,
-    ClientLoginPageComponent
+    ClientLoginPageComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

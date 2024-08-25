@@ -85,14 +85,14 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4   col-md-5 col-6 pb-2   ">
+                    <div class="col-lg-4   col-md-5 col-6 pb-2   " *ngFor="let product of data">
 
 
                         <div class="product   ">
                             <img src="../../assets/cards-images/image 8.png" class="rounded-3 w-100" alt="">
                             <div class="card-body">
 
-                                <h6 *ngFor="let product of data" > {{product.name}}</h6>
+                                <h6  > {{product.name}}</h6>
                                 <span class="d-flex">
                                     <ul class="list-unstyled list-group list-group-horizontal stars">
                                         <li><i class="fa-solid fa-star "></i></li>
@@ -105,90 +105,9 @@
                                 </span>
                             </div>
                             <div class="d-flex align-items-center justify-content-between" >
-                                <span class="d-flex"  *ngFor="let product of data" >
+                                <span class="d-flex"   >
                                     $ {{product.amount}} <span class="ms-2 text-decoration-line-through">$160 <span
-                                            class="badge rounded-pill text-bg-light "  *ngFor="let product of data" >{{product.status}}</span></span></span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4   col-md-5 col-6 pb-2   ">
-
-
-                        <div class="product   ">
-                            <img src="../../assets/cards-images/image 8.png" class="rounded-3 w-100" alt="">
-                            <div class="card-body">
-
-                                <h6 >Gradient Graphic T-shirt</h6>
-                                <span class="d-flex">
-                                    <ul class="list-unstyled list-group list-group-horizontal stars">
-                                        <li><i class="fa-solid fa-star "></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                    </ul>
-    
-                                    3.5/5
-                                </span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="d-flex">
-                                    $234 <span class="ms-1 text-decoration-line-through">$160 <span
-                                            class="badge rounded-pill text-bg-light ">Light</span></span></span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4  col-md-5 col-6 pb-2  ">
-
-
-                        <div class="product   ">
-                            <img src="../../assets/cards-images/image 8.png" class="rounded-3 w-100" alt="">
-                            <div class="card-body">
-
-                                <h6 >Gradient Graphic T-shirt</h6>
-                                <span class="d-flex">
-                                    <ul class="list-unstyled list-group list-group-horizontal stars">
-                                        <li><i class="fa-solid fa-star "></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                    </ul>
-    
-                                    3.5/5
-                                </span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="d-flex">
-                                    $234 <span class="ms-1 text-decoration-line-through">$160 <span
-                                            class="badge rounded-pill text-bg-light ">Light</span></span></span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4   col-md-5 col-6 pb-2   ">
-
-
-                        <div class="product   ">
-                            <img src="../../assets/cards-images/image 8.png" class="rounded-3 w-100" alt="">
-                            <div class="card-body">
-
-                                <h6 >Gradient Graphic T-shirt</h6>
-                                <span class="d-flex">
-                                    <ul class="list-unstyled list-group list-group-horizontal stars">
-                                        <li><i class="fa-solid fa-star "></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                        <li><i class="fa-solid fa-star"></i></li>
-                                    </ul>
-    
-                                    3.5/5
-                                </span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="d-flex">
-                                    $234 <span class="ms-1 text-decoration-line-through">$160 <span
-                                            class="badge rounded-pill text-bg-light ">Light</span></span></span>
+                                            class="badge rounded-pill text-bg-light "   >{{product.status}}</span></span></span>
                             </div>
 
                         </div>

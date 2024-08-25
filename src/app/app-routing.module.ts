@@ -13,6 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,16 @@ const routes: Routes = [
 },
 { path:'login',
   component:ClientLoginPageComponent
+  
+},
+{ path:'cart',
+  component:CartComponent 
+
+},
+{ path:'productDetails',
+
+  component:ProductDetailsComponent 
+
 },
 
 //   {

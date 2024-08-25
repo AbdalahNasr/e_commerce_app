@@ -10,7 +10,7 @@ export class DataService {
 
 getJsonData(){
   
-return this.http.get('assets/productModel-pm.json')
+return this.http.get('assets/productModel.json')
 }
 
    
