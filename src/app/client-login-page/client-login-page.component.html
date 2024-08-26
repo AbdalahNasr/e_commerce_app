@@ -40,11 +40,12 @@
 
               <button   type="submit" class="btn btn-dark col-12 "  [disabled]="authForm.invalid"> 
                 <span *ngIf="!isLoading">sign in</span>
-                <span *ngIf="isLoading">Loading...</span>
+                <div *ngIf="isLoading">
+                  <span class="spinner-border spinner-border-sm" aria-hidden="true" ></span><span>sign in</span>
+                </div>
             </button>
           </div>
 
-          
           <div *ngIf="isLoading">
 <app-loading></app-loading>
         </div>
