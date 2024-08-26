@@ -57,9 +57,11 @@ export class ClientHomePageComponent implements OnInit, OnDestroy {
 
   }
   ngOnInit(): void {
-    this.dataSubscription = this.dataService.getJsonData().subscribe(
+    this.dataSubscription = this.dataService.getProductData().subscribe(
       (res: any) => {
         console.log('Response:', res);
+        console.log('Subscription has started');
+
 
         if (Array.isArray(res) && res.length > 0) {
           this.data = res;
@@ -83,7 +85,6 @@ export class ClientHomePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe from the dataSubscription to prevent memory leaks
     if (this.dataSubscription) {
       this.dataSubscription.unsubscribe();
       console.log('Subscription has been cleaned up.');

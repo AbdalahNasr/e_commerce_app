@@ -22,6 +22,7 @@ import { ClientHomePageComponent } from './client-home-page/client-home-page.com
 import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
 import {HttpClientModule  } from "@angular/common/http";
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LoadigComponent } from './loadig/loadig.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     FooterComponent,
     ClientHomePageComponent,
     ClientLoginPageComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    LoadigComponent
   ],
   imports: [
     BrowserModule,

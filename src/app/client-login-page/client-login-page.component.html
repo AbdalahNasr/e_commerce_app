@@ -6,10 +6,13 @@
 </div>
 <div class="logo-text">
     <h4>Sign in to your account</h4>
-    <form action="" class="col-lg-3 m-auto login">
+    <form action="" class="col-lg-3 m-auto login" #authForm="ngForm" (ngSubmit)="onFormSubmitted()"  *ngIf="!isLoading">
+      
         <div class="input-box  text-start">
             <label for="Email" >E-mail</label>
           <input type="email"
+          #email="ngModel"
+          [(ngModel)]="loginData.email"
            placeholder="E-mail"
             name="email"
             class=" form-control  "
@@ -19,7 +22,9 @@
          <div class="input-box pt-1 text-start">
             <label for="password">password</label>
 
-           <input type="password" 
+           <input type="password"
+           #password="ngModel"
+           [(ngModel)]="loginData.password"
              placeholder="password" name="password"  
              class="form-control"
               required>
@@ -27,13 +32,13 @@
 
           </div>
           <div  class="remember-forgot pt-3 d-flex justify-content-between">
-            <label><input class="rounded" type="checkbox" name="rememberMe" 
+            <label><input class="rounded" #rememberMe [(ngModel)]="loginData.rememberMe " type="checkbox" name="rememberMe" 
                >Remember me</label>
             <a href="#" class="text-dark text-decoration-none">Forgot your Password?</a>
           </div> 
           <div class="submit  pt-3">
 
-              <button   type="submit" class="btn btn-dark col-12 ">sign in</button>
+              <button   type="submit" class="btn btn-dark col-12 "  [disabled]="authForm.invalid">sign in</button>
           </div>
 
 

@@ -14,9 +14,9 @@ currentIndex: number = 0;
   currentProductName: string = '';
   errorMessage: string = '';
   constructor( private _productService:DataService){
-    console.log( this._productService.getJsonData());
+    console.log( this._productService.getProductData());
     
-    this._productService.getJsonData().subscribe((res:any)=>{
+    this._productService.getProductData().subscribe((res:any)=>{
       // console.log(JSON.stringify(res));
       // return JSON.stringify(res)
       this.data = res;

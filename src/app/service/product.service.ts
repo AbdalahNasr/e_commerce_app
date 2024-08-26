@@ -8,7 +8,7 @@ export class DataService {
 
   constructor( private  http:HttpClient ) {}
 
-getJsonData(){
+  getProductData(){
   
 return this.http.get('assets/productModel.json')
 }

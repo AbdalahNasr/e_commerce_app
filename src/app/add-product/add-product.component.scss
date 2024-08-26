@@ -5,9 +5,6 @@ $buplished-color:#0D894F;
 $out-stack-color:#F04438;
 
 
-.col-12{
-    background-color: #E0E2E7;
-}
 
 .headings-links span{
 color: $primary-color;
@@ -56,7 +53,10 @@ font-size: small;
   .drag-btn  {
     color: $primary-color;
   }
-  
+  .save-btn{
+    background-color: $primary-color;
+color: white;
+  }
   
 //   {
 //     width: 30%;
