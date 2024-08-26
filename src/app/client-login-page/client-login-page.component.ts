@@ -21,20 +21,23 @@ export class ClientLoginPageComponent {
 
   constructor(private authService: AuthService) {}
 
+
 // isLoginMode: boolean = true;
-  isLoading: boolean = false;
+  isLoading: boolean = false ; 
 //   errorMessage: string | null = null;
 //   userModel = new User('','',false)
 
   onFormSubmitted(){
 console.log(    this.loginData
 );
-
+this.isLoading = true;
     this.authService.login(this.loginData).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
       },
       error: (error) => {
+        this.isLoading = false;
+
         console.error('Login failed:', error);
       }
     });

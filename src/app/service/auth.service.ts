@@ -7,7 +7,8 @@ import { LoginModel } from '../models/login-model';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://example.com/api/login'; // Replace with your API endpoint
+   // Replace with your API endpoint
+  private apiUrl = 'https://example.com/api/login';
 
   constructor(private http: HttpClient) {}
 

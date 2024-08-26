@@ -20,8 +20,10 @@ import { NavbarComponentComponent } from './navbar-component/navbar-component.co
 import { FooterComponent } from './footer/footer.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { ClientLoginPageComponent } from './client-login-page/client-login-page.component';
-import {HttpClientModule  } from "@angular/common/http";
+import {HttpClientModule, provideHttpClient, withInterceptors  } from "@angular/common/http";
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpLoadingInterceptor } from './models/loading-interceptor';
 import { LoadigComponent } from './loadig/loadig.component';
 @NgModule({
   declarations: [
@@ -45,15 +47,16 @@ import { LoadigComponent } from './loadig/loadig.component';
     LoadigComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   
   ],
-  providers: [],
+  providers: [ provideHttpClient(withInterceptors([HttpLoadingInterceptor]))],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

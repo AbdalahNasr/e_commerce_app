@@ -53,28 +53,42 @@ export class ClientHomePageComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   private dataSubscription: Subscription | undefined; 
 
-  constructor(private dataService: DataService) {
+  isLoading: boolean = true ; 
 
-  }
-  ngOnInit(): void {
-    this.dataSubscription = this.dataService.getProductData().subscribe(
+constructor(private dataService: DataService) {
+
+}
+
+ngOnInit(): void {
+  
+  console.log(this.isLoading);
+  console.log(this.data);
+  this.dataSubscription = this.dataService.getProductData().subscribe(
+      
+      
       (res: any) => {
         console.log('Response:', res);
         console.log('Subscription has started');
-
-
+        
+        
         if (Array.isArray(res) && res.length > 0) {
           this.data = res;
           this.currentProductName = this.data[this.currentIndex].name;
         } else {
           this.errorMessage = 'No products found or data is not an array.';
         }
+        this.isLoading = false ;
+  console.log(this.isLoading);
       },
+
       (error) => {
+        this.isLoading = false ;
+          console.log(this.isLoading);
         console.error('Error fetching data:', error);
         this.errorMessage = 'Failed to load product data.';
       }
     );
+
   }
 
   nextProduct(): void {
@@ -85,6 +99,7 @@ export class ClientHomePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.isLoading = false
     if (this.dataSubscription) {
       this.dataSubscription.unsubscribe();
       console.log('Subscription has been cleaned up.');

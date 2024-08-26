@@ -6,7 +6,7 @@
 </div>
 <div class="logo-text">
     <h4>Sign in to your account</h4>
-    <form action="" class="col-lg-3 m-auto login" #authForm="ngForm" (ngSubmit)="onFormSubmitted()"  *ngIf="!isLoading">
+    <form action="" class="col-lg-3 m-auto login" #authForm="ngForm" (ngSubmit)="onFormSubmitted()"  >
       
         <div class="input-box  text-start">
             <label for="Email" >E-mail</label>
@@ -15,7 +15,7 @@
           [(ngModel)]="loginData.email"
            placeholder="E-mail"
             name="email"
-            class=" form-control  "
+            class=" form-control"
            required>
 
          </div>
@@ -38,12 +38,18 @@
           </div> 
           <div class="submit  pt-3">
 
-              <button   type="submit" class="btn btn-dark col-12 "  [disabled]="authForm.invalid">sign in</button>
+              <button   type="submit" class="btn btn-dark col-12 "  [disabled]="authForm.invalid"> 
+                <span *ngIf="!isLoading">sign in</span>
+                <span *ngIf="isLoading">Loading...</span>
+            </button>
           </div>
 
-
-    </form>
-</div>
+          
+          <div *ngIf="isLoading">
+<app-loading></app-loading>
+        </div>
+        </form>
+    </div>
 
 </div>
     </div>
