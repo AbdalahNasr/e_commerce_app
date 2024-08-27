@@ -7,8 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 export class LoadingService {
   private loadingSubject = new BehaviorSubject<boolean>(false);
   loading$ = this.loadingSubject.asObservable();
-
+  
+  
   setLoading(isLoading: boolean) {
+    // debugger
     this.loadingSubject.next(isLoading);
   }
 }

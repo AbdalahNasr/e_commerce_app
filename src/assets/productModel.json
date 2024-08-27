@@ -1,5 +1,8 @@
 [
     {
+
+      "id": "1",
+    "guid": "123e4567-e89b-12d3-a456-426614174000",
       "name": "Product 1",
       "description": "Description for Product 1",
       "type": "Type A",
@@ -11,7 +14,9 @@
     }
     ,
     {
-      "name": "Product 1",
+      "id": "2",
+"guid": "223e4567-e89b-12d3-a456-426614174001",
+      "name": "Product 2",
       "description": "Description for Product 1",
       "type": "Type A",
       "status": "Available",
@@ -20,16 +25,6 @@
       "createdOn": "2024-08-20T12:00:00Z",
       "updatedOn": "2024-08-21T12:00:00Z"
     }
-    ,
-    {
-      "name": "Product 1",
-      "description": "Description for Product 1",
-      "type": "Type A",
-      "status": "Available",
-      "amount": 100.0,
-      "isDeleted": false,
-      "createdOn": "2024-08-20T12:00:00Z",
-      "updatedOn": "2024-08-21T12:00:00Z"
-    }
+    
   ]
   

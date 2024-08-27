@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../service/product.service';
+import {  productService } from '../service/product.service';
 import { Product } from '../models/product-list-data';
 
 @Component({
@@ -13,10 +13,10 @@ data: Product[] = [];
 currentIndex: number = 0;
   currentProductName: string = '';
   errorMessage: string = '';
-  constructor( private _productService:DataService){
-    console.log( this._productService.getProductData());
+  constructor( private _productService:productService){
+    console.log( this._productService.getProducts());
     
-    this._productService.getProductData().subscribe((res:any)=>{
+    this._productService.getProducts().subscribe((res:any)=>{
       // console.log(JSON.stringify(res));
       // return JSON.stringify(res)
       this.data = res;

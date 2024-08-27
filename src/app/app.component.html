@@ -22,16 +22,16 @@
 <div class="conrainer-fluied overflow-x-hidden">
   
   <div class="row">
-    <div class="col-lg-2 col-sm-2 ">
+    <!-- <div class="col-lg-2 col-sm-2 ">
     
       <app-side-bar  *ngIf="isVisible"></app-side-bar>
-    </div>
+    </div> -->
   
-    <div [ngClass]="{ 'col-lg-10': isVisible, 'col-lg-12': !isVisible }" >
+    <!-- <div [ngClass]="{ 'col-lg-10': isVisible, 'col-lg-12': !isVisible }" >
     
-      <router-outlet>
-        
-      </router-outlet>
-    </div>
+    </div> -->
+    <router-outlet>
+      
+    </router-outlet>
   </div>
 </div>

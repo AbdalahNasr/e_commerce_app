@@ -48,7 +48,7 @@ const routes: Routes = [
   component:ProductListComponent
 },
 { path:'home',
-  component:ClientHomePageComponent
+  component:ClientHomePageComponent 
 },
 { path:'login',
   component:ClientLoginPageComponent
@@ -58,7 +58,7 @@ const routes: Routes = [
   component:CartComponent 
 
 },
-{ path:'productDetails',
+{ path:'productDetails/:id',
 
   component:ProductDetailsComponent 
 

@@ -38,7 +38,7 @@ export class AppComponent  implements OnInit {
        this.router.events.subscribe(event => {
         if (event instanceof NavigationEnd) {
 
-          if (event.url === '/login' || event.url === '/signin' || event.url === '/home' || event.url === '/productDetails'   || event.url === '/cart'  || event.url === '/' || event.url === '/**' ) {
+          if (event.url === '/login' || event.url === '/signin' || event.url === '/home' || event.url === '/productDetails/:id'   || event.url === '/cart'  || event.url === '/' || event.url === '/**' ) {
             this.sidebarService.setVisibility(false);
           } else {
             this.sidebarService.setVisibility(true);
