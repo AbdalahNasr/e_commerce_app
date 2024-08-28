@@ -17,16 +17,16 @@
     <div class="row ">
 
         <div class="col-lg-6 card p-2 m-2 rounded-4">
-            <div class="col-lg-12 p-2 d-flex">
-                <div class="col-lg-3 ">
+            <div class="col-lg-12 p-2 d-flex " *ngFor="let items of cartItems">
+                <div class="col-lg-3 " >
                     <img src="assets/cards-images/tshirt.png" class="img-fluid rounded-start pe-2  rounded-4"
                         alt="">
                 </div>
-                <div class="col-lg-11 ">
+                <div class="col-lg-11  ">
                     <div class="row">
 
                         <div class="col-lg-9  ">
-                            <h4>Gradient Graphic T-shirt</h4>
+                            <h4>{{items?.name}}</h4>
                         </div>
                         <div class="col-lg-1"><i class="fa-solid fa-trash text-danger"></i></div>
                         <div class="col-lg-9 m-0  ">
@@ -37,9 +37,9 @@
                     <div class="row">
 
                         <div class="col-lg-10 pb-2 d-flex justify-content-between">
-                            <h4>$109</h4>
-                            <div class=" p-2 bg-body-secondary rounded-5 "><i class="fa-solid fa-minus pe-3"></i> <span
-                                    class="pe-3">1</span><i class="fa-solid fa-plus"></i></div>
+                            <h4>${{items?.amount}}</h4>
+                            <div class=" p-2 bg-body-secondary rounded-5 "><i (click)="decrement()" class="fa-solid fa-minus pe-3" ></i> <span
+                                    class="pe-3">{{counterValue}}</span><i (click)="increment()"  class="fa-solid fa-plus"></i></div>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
 
             </div>
             <hr>
-            <div class="col-lg-12 p-2 d-flex">
+            <!-- <div class="col-lg-12 p-2 d-flex">
                 <div class="col-lg-3 ">
                     <img src="../../assets/cards-images/tshirt.png" class="img-fluid rounded-start pe-2  rounded-4"
                         alt="">
@@ -105,7 +105,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
         </div>
         <div class="col-lg-5">
 

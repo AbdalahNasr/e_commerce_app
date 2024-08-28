@@ -140,10 +140,6 @@ export class ClientHomePageComponent implements OnInit, OnDestroy {
 
 }
 
-/**
- * Listen to the loadingSub property in the LoadingService class. This drives the
- * display of the loading spinner.
- */
 ngOnInit(): void {
   // debugger ;
 
