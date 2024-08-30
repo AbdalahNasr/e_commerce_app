@@ -11,37 +11,80 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './client-login-page.component.html',
   styleUrls: ['./client-login-page.component.scss']
 })
+// export class ClientLoginPageComponent {
+
+//   loginData: LoginModel = {
+//     id: '',
+//     email: '',
+//     password: '',
+//     rememberMe: false
+//   };
+
+//   constructor(private authService: AuthService , private router:Router) {}
+
+
+// // isLoginMode: boolean = true;
+//   isLoading: boolean = false ; 
+// //   errorMessage: string | null = null;
+// //   userModel = new User('','',false)
+
+//   onFormSubmitted(){
+// console.log(    this.loginData
+// );
+// this.isLoading = true;
+//     this.authService.login(this.loginData).subscribe({
+//       next: (response) => {
+//         console.log('Login successful:', response);
+        
+//         this.router.navigate(['/home']);
+//         this.isLoading = false;
+//       },
+//       error: (error) => {
+//         this.isLoading = false;
+
+//         console.error('Login failed:', error); 
+
+//         return error
+//       }
+//     });
+
+//   }
+
+// }
+
+
 export class ClientLoginPageComponent {
 
   loginData: LoginModel = {
+    id: '',
     email: '',
     password: '',
     rememberMe: false
   };
 
-  constructor(private authService: AuthService) {}
+  isLoading: boolean = false;
 
+  constructor(private authService: AuthService, private router: Router) {}
 
-// isLoginMode: boolean = true;
-  isLoading: boolean = false ; 
-//   errorMessage: string | null = null;
-//   userModel = new User('','',false)
+  onFormSubmitted() {
+    console.log(this.loginData);
+    this.isLoading = true;
 
-  onFormSubmitted(){
-console.log(    this.loginData
-);
-this.isLoading = true;
     this.authService.login(this.loginData).subscribe({
       next: (response) => {
-        console.log('Login successful:', response);
+        if (response.success) {
+          console.log('Login successful:', response);
+          this.router.navigate(['/home']);
+        } else {
+          console.error('Login failed:', response.message);
+          // Optionally, show an error message to the user
+        }
+        this.isLoading = false;
       },
       error: (error) => {
         this.isLoading = false;
-
         console.error('Login failed:', error);
       }
     });
-
   }
-
 }

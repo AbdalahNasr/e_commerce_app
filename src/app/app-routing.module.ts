@@ -54,6 +54,10 @@ const routes: Routes = [
   component:ClientLoginPageComponent
   
 },
+{ path:'signup',
+  component:SignupComponent
+  
+},
 { path:'cart',
   component:CartComponent 
 

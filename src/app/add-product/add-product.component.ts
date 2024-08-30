@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import {  Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',

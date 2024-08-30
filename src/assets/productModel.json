@@ -7,7 +7,7 @@
       "description": "Description for Product 1",
       "type": "Type A",
       "status": "Available",
-      "amount": 100.0,
+      "amount": 1,
       "isDeleted": false,
       "createdOn": "2024-08-20T12:00:00Z",
       "updatedOn": "2024-08-21T12:00:00Z"
@@ -20,7 +20,7 @@
       "description": "Description for Product 1",
       "type": "Type A",
       "status": "Available",
-      "amount": 100.0,
+      "amount": 1,
       "isDeleted": false,
       "createdOn": "2024-08-20T12:00:00Z",
       "updatedOn": "2024-08-21T12:00:00Z"

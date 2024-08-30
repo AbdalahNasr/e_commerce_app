@@ -73,7 +73,7 @@
                   <i class="fa-solid fa-minus pe-3"></i> <span
                   class="pe-3">1</span><i class="fa-solid fa-plus"></i></div>
   
-                <button class="btn btn-lg bg-dark text-white rounded-5 col-lg-7  ">Add to cart </button>                     
+                <button class="btn btn-lg bg-dark text-white rounded-5 col-lg-7  " >Add to cart </button>                     
   
               </div>
             </div>
@@ -120,7 +120,7 @@
                 <i class="fa-solid fa-minus pe-3"></i> <span
                 class="pe-3">1</span><i class="fa-solid fa-plus"></i></div>
 
-              <button class="btn btn-lg bg-dark text-white rounded-5 col-lg-7  "  (click)="addToCart()">Add to cart </button>                     
+              <button class="btn btn-lg bg-dark text-white rounded-5 col-lg-7  "  [routerLink]="['/cart']" (click)="addToCart()">Add to cart </button>                     
 
             </div>
           </div>
