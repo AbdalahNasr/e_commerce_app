@@ -4,6 +4,7 @@
       "id": "1",
     "guid": "123e4567-e89b-12d3-a456-426614174000",
       "name": "Product 1",
+      "price": " 1220",
       "description": "Description for Product 1",
       "type": "Type A",
       "status": "Available",

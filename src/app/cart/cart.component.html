@@ -115,20 +115,20 @@
                         <h3>Order Summary</h3>
                         <div class="sub-total d-flex justify-content-between">
                             <span>Sub total</span>
-                            <p>145</p>
+                            <p>{{ orderSummary?.price | currency }}</p>
                         </div>
                         <div class="sub-total d-flex justify-content-between">
-                            <span>Sub total</span>
-                            <p>145</p>
+                            <span>discount</span>
+                            <p>(20%): -{{ orderSummary?.discount | currency }}</p>
                         </div>
                         <div class="sub-total d-flex justify-content-between">
-                            <span>Sub total</span>
-                            <p>145</p>
+                            <span> delivery</span>
+                            <p>  {{ orderSummary?.delivery | currency }} </p>
                         </div>
                         <hr>
                         <div class="sub-total d-flex justify-content-between">
                             <span>Sub total</span>
-                            <p>145</p>
+                            <p>{{ orderSummary?.totalAmount | currency }}</p>
                         </div>
                         <div class="col-lg-12 d-flex justify-content-between pb-2">
                             <input type="text" class="rounded-5 col-lg-9" placeholder=" Add promo code">

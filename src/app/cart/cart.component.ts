@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/product-list-data';
+import { Order } from '../models/order-model';
 
 @Component({
   selector: 'app-cart',
@@ -46,6 +47,11 @@ import { Product } from '../models/product-list-data';
 
 export class CartComponent {
   cartItems: Product[] = [];
+  orderSummary: Order | null = null;
+  taxRate: number = 0.14;
+  discountRate: number = 0;
+  delivery: number = 15;
+  currentOrderId: number = 1;
 
   // counterValue: number = 0;
 
@@ -53,6 +59,7 @@ export class CartComponent {
     this.cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
     
     console.log('Cart items:', this.cartItems);
+    this.createOrderSummary();
   }
 
   
@@ -96,6 +103,54 @@ export class CartComponent {
     console.log('Cart items updated in local storage:', this.cartItems);
 
     
+  }
+
+
+
+
+
+  // createOrderSummary(): void {
+  //   const amount = this.cartItems.reduce((total, item) => total + item.price * item.amount, 0);
+  //   const tax = amount * this.taxRate;
+  //   const totalAmount = amount + tax;
+
+  //   this.orderSummary = {
+  //     id: this.currentOrderId++, // Increment ID for each new order
+  //     amount: amount,
+  //     tax: tax,
+  //     totalAmount: totalAmount,
+  //     createdOn: new Date(),
+  //     updatedOn: new Date(),
+  //     isDeleted: false,
+  //     customerId: 12345, // Replace with actual customer Id when i get it from local storage
+  //   };
+
+  //   console.log('Order Summary:', this.orderSummary);
+  // }
+
+  createOrderSummary(): void {
+    const price = this.cartItems.reduce((total, item) => total + item.price * item.amount, 0);
+    const discount = price * this.discountRate;
+    const discountedAmount = price - discount;
+    const tax = discountedAmount * this.taxRate;
+    const delivery =  this.delivery
+    const totalAmount = discountedAmount + tax + delivery;
+
+    this.orderSummary = {
+      id: this.currentOrderId++, 
+      price: discountedAmount,
+      tax: tax,
+      discount: discount, // when The discount applied
+      delivery: delivery ,
+      totalAmount: totalAmount,
+
+      createdOn: new Date(),
+      updatedOn: new Date(),
+      isDeleted: false,
+      customerId: 12345, // Replace with actual customer ID
+    };
+
+    console.log('Order Summary:', this.orderSummary);
   }
 }
 
