@@ -9,7 +9,7 @@ import { Product } from '../models/product-list-data';
 })
 export class ProductListComponent {  
 
-data: Product[] = [];
+products: Product[] = [];
 currentIndex: number = 0;
   currentProductName: string = '';
   errorMessage: string = '';
@@ -19,8 +19,8 @@ currentIndex: number = 0;
     this._productService.getProducts().subscribe((res:any)=>{
       // console.log(JSON.stringify(res));
       // return JSON.stringify(res)
-      this.data = res;
-      console.log(this.data);
+      this.products = res;
+      console.log(this.products);
       
     })
   }

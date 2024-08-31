@@ -87,14 +87,15 @@ export class AppComponent implements OnInit {
     '/cart': true,
     '/': true,
     '/**': true,
-    '/addProduct': false
+    '/addProduct': false ,
+    '/productList': false
   };
 
-  constructor(private router: Router, private sidebarService: SidebarService) {}
+  constructor(private router: Router, private SidebarService: SidebarService) {}
 
   ngOnInit() {
     // Subscribe to the sidebar visibility state
-    this.sidebarService.visibility$.subscribe(isVisible => {
+    this.SidebarService.visibility$.subscribe(isVisible => {
       this.isVisible = isVisible;
       console.log('Sidebar visibility:', this.isVisible);
     });
@@ -109,7 +110,7 @@ export class AppComponent implements OnInit {
           
         console.log(`Navigated to ${routePath}, shouldHideSidebar: ${shouldHideSidebar}`);
         
-        this.sidebarService.setVisibility(!shouldHideSidebar);
+        this.SidebarService.setVisibility(!shouldHideSidebar);
       }
     });
   }

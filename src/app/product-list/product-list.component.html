@@ -96,13 +96,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let product of products">
                 <td>                <input class="form-check-input " type="checkbox" value="" id="defaultCheck">
                 </td>
                 <td>
                   <div class="product-field d-flex ">
                     <img src="assets/images/Img.png" alt="">
-                    <p *ngFor="let product of data">{{product.name}}
+                    <p >{{product.name}}
                       <br>
                       <span>
                         3variants
