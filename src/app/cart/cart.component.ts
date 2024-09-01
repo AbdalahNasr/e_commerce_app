@@ -92,8 +92,6 @@ export class CartComponent {
     this.cartItems = this.cartItems.filter(cartItem => cartItem.id !== item.id);
     this.updateCartInLocalStorage()
     // localStorage.removeItem(item.id)
-    console.log(    localStorage.removeItem(item.id)
-  );
     
     
   }
@@ -129,6 +127,7 @@ export class CartComponent {
   // }
 
   createOrderSummary(): void {
+    debugger
     const price = this.cartItems.reduce((total, item) => total + item.price * item.amount, 0);
     const discount = price * this.discountRate;
     const discountedAmount = price - discount;
