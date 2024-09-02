@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of, tap } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, Observable, of, tap, throwError } from 'rxjs';
 import { LoginModel } from '../models/login-model';
+import {  HttpErrorResponse } from '@angular/common/http';
+
 import { RegisterationModel } from '../models/registeration-model';
 
 @Injectable({
   providedIn: 'root'
-})
-// export class AuthService {
+})// export class AuthService {
 //    // Replace with your API endpoint
 //   private apiUrl = 'assets/loginModel.json';
 
@@ -191,25 +192,112 @@ import { RegisterationModel } from '../models/registeration-model';
 
 
 
+// export class AuthService { 
+//   private apiUrl = 'https://localhost:7096/api/Customer'; 
+
+//   constructor(private http: HttpClient  ) {}
+
+//   register(user: any): Observable<any> { 
+//     return this.http.post<any>(`${this.apiUrl}/register`, user, );
+//   }
+  
+
+//   // login(credentials: LoginModel ): Observable<any> {
+//   //   return this.http.post<any>(`${this.apiUrl}/login`, credentials);
+//   // }
+
+//   login(credentials: LoginModel): Observable<any> {
+//     const headers = new HttpHeaders({
+//       'content-type': 'application/json',
+//       'accept': '/' 
+//     });
+
+//     return this.http.post<any>(`${this.apiUrl}/login`, credentials, { headers }).pipe(
+//       tap(response => {
+//         if (response && response.userId) {
+//           localStorage.setItem('isLoggedIn', 'true');
+          
+//           localStorage.setItem('loggedInUser', JSON.stringify(response));
+//         }
+//         // console.log(response.userId);
+//       })
+//     );
+//   }  logout(): void {
+//     localStorage.removeItem('isLoggedIn');
+//     localStorage.removeItem('loggedInUser');
+//   }
+
+//   isLoggedIn(): boolean {
+//     return localStorage.getItem('isLoggedIn') == 'true';
+//   }
+//   getLoggedInUser(): any {
+//     return JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+//   }
+// }
+
+
+
 export class AuthService {
-  private apiUrl = 'https://localhost:7096/api/Customer'; // Replace with your API URL
+  private apiUrl = 'https://localhost:7096/api/Customer'; 
 
-  constructor(private http: HttpClient , ) {}
+  constructor(private http: HttpClient) {}
 
+  // Method for registering a new user
   register(user: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, user);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.post<any>(`${this.apiUrl}/register`, user, { headers }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Registration error:', error);
+        return throwError(() => this.handleRegistrationError(error));
+      })
+    );
   }
 
-  login(credentials: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, credentials);
+  // Method for logging in a user
+  login(credentials: LoginModel): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials, { headers }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Login error:', error);
+        return throwError(() => this.handleLoginError(error));
+      })
+    );
   }
 
+  // Method for logging out a user
   logout(): void {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('loggedInUser');
   }
 
+  // Method to check if the user is logged in
   isLoggedIn(): boolean {
-    return localStorage.getItem('isLoggedIn') === 'true';
+    return localStorage.getItem('isLoggedIn') == 'true';
+  }
+
+  // Handle errors related to registration
+   handleRegistrationError(error: HttpErrorResponse): string {
+    if (error.status == 400) {
+      return 'Registration failed: Invalid request. Please check your input.';
+    }  else {
+      return `Registration failed: ${error.message}`;
+    }
+  }
+
+  // Handle errors related to login
+   handleLoginError(error: HttpErrorResponse): string {
+    if (error.status == 401) { 
+      return 'Login failed: Invalid credentials.';
+    }  else{
+      return `Login failed: ${error.message}`;
+    }
   }
 }

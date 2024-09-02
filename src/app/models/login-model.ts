@@ -1,7 +1,7 @@
 export interface LoginModel {
       // id : string,
-    email: string;
-    password: string;
+    Email: string;
+    Password: string;
     // rememberMe: boolean;
   }
   

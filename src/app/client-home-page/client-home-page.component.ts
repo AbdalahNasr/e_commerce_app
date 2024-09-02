@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { LoadingService } from '../service/loading.service';
 import { Product } from './../models/product-list-data';
 import { ProductService } from './../service/product.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-client-home-page',
@@ -213,27 +214,90 @@ import { ProductService } from './../service/product.service';
   
 
   
+// export class ClientHomePageComponent implements OnInit, OnDestroy {
+//   Products: Product[] = [];
+//   currentIndex: number = 0;
+//   currentProductName: string = '';
+//   errorMessage: string = '';
+//    dataSubscription: Subscription | undefined; 
+//   isLoading: boolean = false; 
+//   userId: string = ''  ;
+//   constructor(
+//     private _productService: ProductService,
+//     private loadingService: LoadingService,
+//     private authService: AuthService
+//   ) {}
+
+//   ngOnInit(): void {
+//     this.loadingService.loading$.subscribe(isLoading => {
+//       this.isLoading = isLoading;
+
+//     });
+
+//     this.dataSubscription = this._productService.getProducts().subscribe(
+//       (res: Product[]) => {
+//         this.isLoading = false;  
+//         if (Array.isArray(res) && res.length > 0) {
+//           this.Products = res;
+//           if (this.Products.length > 0) {
+//             this.currentProductName = this.Products[this.currentIndex].name;
+//           }
+//         } else {
+//           this.errorMessage = 'No products found or data is not an array.';
+//         }
+//       },
+//       (error) => {
+//         this.isLoading = false; // Set loading to false on error
+//         this.errorMessage = 'Failed to load product data.';
+//         console.error('Error fetching data:', error);
+//       }
+//     );
+//   }
+
+//   nextProduct(): void {
+//     if (this.Products.length > 0) {
+//       this.currentIndex = (this.currentIndex + 1) % this.Products.length;
+//       this.currentProductName = this.Products[this.currentIndex].name;
+//     }
+//   }
+
+//   ngOnDestroy(): void {
+//     if (this.dataSubscription) {
+//       this.dataSubscription.unsubscribe();
+//       console.log('Subscription has been cleaned up.');
+//     }
+//   }
+// }
+
+ 
 export class ClientHomePageComponent implements OnInit, OnDestroy {
   Products: Product[] = [];
   currentIndex: number = 0;
   currentProductName: string = '';
   errorMessage: string = '';
-  private dataSubscription: Subscription | undefined; 
+  dataSubscription: Subscription | undefined; 
   isLoading: boolean = false; 
+  userId: string = '';
 
   constructor(
     private _productService: ProductService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    // Subscribe to loading state
     this.loadingService.loading$.subscribe(isLoading => {
       this.isLoading = isLoading;
     });
 
-    this.dataSubscription = this._productService.getProducts().subscribe(
+   const customerId = this.userId = localStorage.getItem('userId') || '';
+
+console.log(this.userId)
+
+    this.dataSubscription = this._productService.getProducts(customerId).subscribe(
       (res: Product[]) => {
-        this.isLoading = false; 
+        this.isLoading = false;  
         if (Array.isArray(res) && res.length > 0) {
           this.Products = res;
           if (this.Products.length > 0) {

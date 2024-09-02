@@ -6,13 +6,13 @@
 </div>
 <div class="logo-text">
     <h4>Sign in to your account</h4>
-    <form action="" class="col-lg-3 m-auto login" #authForm="ngForm" (ngSubmit)="onFormSubmitted()"  >
+    <form  class="col-lg-3 m-auto login" #authForm="ngForm" (ngSubmit)="onFormSubmitted()"  >
       
         <div class="input-box  text-start">
             <label for="Email" >E-mail</label>
           <input type="email"
           #email="ngModel"
-          [(ngModel)]="loginData.email"
+          [(ngModel)]="loginData.Email"
            placeholder="E-mail"
             name="email"
             class=" form-control"
@@ -24,7 +24,7 @@
 
            <input type="password"
            #password="ngModel"
-           [(ngModel)]="loginData.password"
+           [(ngModel)]="loginData.Password"
              placeholder="password" name="password"  
              class="form-control"
               required>
