@@ -56,10 +56,11 @@ import { AuthService } from '../service/auth.service';
 export class ClientLoginPageComponent {
 
   loginData: LoginModel = {
-    id: '',
+    
+    // id: '',
     email: '',
-    password: '',
-    rememberMe: false
+    password: ''
+    // rememberMe: false
   };
 
   isLoading: boolean = false;
@@ -67,11 +68,13 @@ export class ClientLoginPageComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onFormSubmitted() {
+    debugger
     console.log(this.loginData);
     this.isLoading = true;
 
     this.authService.login(this.loginData).subscribe({
       next: (response) => {
+        debugger
         if (response.success) {
           console.log('Login successful:', response);
           this.router.navigate(['/home']);

@@ -123,9 +123,15 @@ export class SignupComponent {
 
   constructor(private authService: AuthService, private router: Router) {
     this.addUserForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+
+      name: new FormControl('abdallah'),
+      address: new FormControl('50st' ),
+      phone: new FormControl('01534632451'),
+      email: new FormControl('',  [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
       confirmationPassword: new FormControl('', [Validators.required]),
+      // isActive: new FormControl(''),   
+      status: new FormControl('isActive'),   
       rememberMe: new FormControl(false)
     }, { validators: this.passwordMatchValidator() });
   }
@@ -157,7 +163,7 @@ export class SignupComponent {
         next: (response) => {
           console.log('Registration successful:', response);
           this.isLoading = false;
-          // not woriing ????
+          // not working ????               
           this.router.navigate(['/login']); 
         },
         error: (error) => {

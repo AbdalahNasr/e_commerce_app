@@ -63,6 +63,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+              
             }
           },
           "defaultConfiguration": "production"
@@ -72,9 +73,12 @@
           "configurations": {
             "production": {
               "browserTarget": "e_commerce_app:build:production"
+
             },
             "development": {
-              "browserTarget": "e_commerce_app:build:development"
+              "browserTarget": "e_commerce_app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"

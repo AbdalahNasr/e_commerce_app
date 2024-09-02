@@ -17,7 +17,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 const routes: Routes = [
   {
-    path: '' ,
+    path: 'sidebar' ,
     component:SideBarComponent
 },
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
 { path:'productList',
   component:ProductListComponent
 },
-{ path:'home',
+{ path:'',
   component:ClientHomePageComponent 
 },
 { path:'login',

@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingService } from '../service/loading.service';
 import { Product } from './../models/product-list-data';
-import { productService } from './../service/product.service';
+import { ProductService } from './../service/product.service';
 
 @Component({
   selector: 'app-client-home-page',
@@ -127,67 +127,128 @@ import { productService } from './../service/product.service';
 
 // get with id
 
+// export class ClientHomePageComponent implements OnInit, OnDestroy {
+//   Products: Product[] = [];
+//   currentIndex: number = 0;
+//   currentProductName: string = '';
+//   errorMessage: string = '';
+//   private dataSubscription: Subscription | undefined; 
+
+  
+//   isLoading: boolean = false ; 
+//   constructor(private _productService: ProductService , private loadingService: LoadingService ) {
+
+// }
+
+// ngOnInit(): void {
+//   // debugger ;
+
+
+
+
+
+//   console.log(this.isLoading);
+//   // console.log(this.Products);
+
+        
+//   this.loadingService.loading$.subscribe(isLoading => {
+//     this.isLoading = isLoading;
+//   });
+
+
+
+//   console.log(this._productService);
+//   this.dataSubscription = this._productService.getProducts().subscribe(
+      
+      
+//       (res: Product[]) => {
+//         console.log('Response:', res);
+      
+//   console.log(this.isLoading);
+//         console.log('Subscription has started');
+        
+        
+//         if (Array.isArray(res) && res.length > 0) {
+//           this.Products = res;
+//           this.currentProductName = this.Products[this.currentIndex].name;
+//           this.isLoading = true
+//         } else {
+//           this.errorMessage = 'No products found or data is not an array.';
+//         }
+
+//       },
+
+//       (error) => {
+//         // debugger ;
+
+//         this.isLoading = false ;
+//           console.log(this.isLoading);
+//         console.error('Error fetching data:', error);
+//         this.errorMessage = 'Failed to load product data.';
+//       }
+//     );
+
+//   }
+
+//   nextProduct(): void {
+//     if (this.Products.length > 0) {
+//       this.currentIndex = (this.currentIndex + 1) % this.Products.length;
+//       this.currentProductName = this.Products[this.currentIndex].name;
+//     }
+
+//   }
+
+
+//   ngOnDestroy(): void {
+//     this.isLoading = false
+//     if (this.dataSubscription) {
+//       this.dataSubscription.unsubscribe();
+//       console.log('Subscription has been cleaned up.');
+//     }
+//   }
+
+  
+// }
+
+  
+
+  
 export class ClientHomePageComponent implements OnInit, OnDestroy {
   Products: Product[] = [];
   currentIndex: number = 0;
   currentProductName: string = '';
   errorMessage: string = '';
   private dataSubscription: Subscription | undefined; 
+  isLoading: boolean = false; 
 
-  
-  isLoading: boolean = false ; 
-  constructor(private _productService: productService , private loadingService: LoadingService ) {
+  constructor(
+    private _productService: ProductService,
+    private loadingService: LoadingService
+  ) {}
 
-}
+  ngOnInit(): void {
+    this.loadingService.loading$.subscribe(isLoading => {
+      this.isLoading = isLoading;
+    });
 
-ngOnInit(): void {
-  // debugger ;
-
-
-
-
-
-  console.log(this.isLoading);
-  // console.log(this.Products);
-
-        
-  this.loadingService.loading$.subscribe(isLoading => {
-    this.isLoading = isLoading;
-  });
-
-
-
-  console.log(this._productService);
-  this.dataSubscription = this._productService.getProducts().subscribe(
-      
-      
+    this.dataSubscription = this._productService.getProducts().subscribe(
       (res: Product[]) => {
-        console.log('Response:', res);
-      
-  console.log(this.isLoading);
-        console.log('Subscription has started');
-        
-        
+        this.isLoading = false; 
         if (Array.isArray(res) && res.length > 0) {
           this.Products = res;
-          this.currentProductName = this.Products[this.currentIndex].name;
-          this.isLoading = true
+          if (this.Products.length > 0) {
+            this.currentProductName = this.Products[this.currentIndex].name;
+          }
         } else {
           this.errorMessage = 'No products found or data is not an array.';
         }
-
       },
-
       (error) => {
-        // debugger ;
-
-        this.isLoading = false ;
-          console.log(this.isLoading);
-        console.error('Error fetching data:', error);
+        this.isLoading = false; // Set loading to false on error
         this.errorMessage = 'Failed to load product data.';
+        console.error('Error fetching data:', error);
       }
     );
-
   }
 
   nextProduct(): void {
@@ -195,21 +256,12 @@ ngOnInit(): void {
       this.currentIndex = (this.currentIndex + 1) % this.Products.length;
       this.currentProductName = this.Products[this.currentIndex].name;
     }
-
   }
 
-
   ngOnDestroy(): void {
-    this.isLoading = false
     if (this.dataSubscription) {
       this.dataSubscription.unsubscribe();
       console.log('Subscription has been cleaned up.');
     }
   }
-
-  
 }
-
-  
-
-  

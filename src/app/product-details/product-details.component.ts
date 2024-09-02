@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { productService } from '../service/product.service';
+import { ProductService,  } from '../service/product.service';
 import { Product } from './../models/product-list-data';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -93,7 +93,7 @@ export class ProductDetailsComponent implements OnInit {
   cartItems: Product[] = [];
 
   constructor(
-    private _productService: productService,
+    private _productService: ProductService,
     private _activateRoute: ActivatedRoute,
     private router : Router
   ) {}
@@ -106,7 +106,7 @@ export class ProductDetailsComponent implements OnInit {
   loadProduct(): void {
     const id = this._activateRoute.snapshot.params['id'];
     this._productService.getProductById(id).subscribe(
-      (res) => {
+      (res : any) => {
         if (res || res == !id) {
           this.product = res;
           console.log('Product data loaded:', this.product);

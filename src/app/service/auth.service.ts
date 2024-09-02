@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { LoginModel } from '../models/login-model';
 import { RegisterationModel } from '../models/registeration-model';
 
@@ -13,8 +13,8 @@ import { RegisterationModel } from '../models/registeration-model';
 
 //   constructor(private http: HttpClient) {}
 
-//   // login(status: LoginModel): Observable<any> {
-//   //   console.log(status);
+//   // login(state: LoginModel): Observable<any> {
+//   //   console.log(state);
     
 //   //   return this.http.post<any>(this.apiUrl, status);
 //   // }
@@ -119,27 +119,89 @@ import { RegisterationModel } from '../models/registeration-model';
 //   }
 // }
 
+// export class AuthService {
+//   private apiUrl = 'https://localhost:7096';
+
+//   constructor(private http: HttpClient) {}
+
+//   register(state: any): Observable<any> {
+//     console.log(state);
+//     localStorage.setItem('registeredUser', JSON.stringify(state)); 
+//     return this.http.post<any>(this.apiUrl, state);
+//   }
+
+//   login(state: any): Observable<any> {
+//     debugger
+//     const storedUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
+
+//     if (state.email === storedUser.email && state.password == storedUser.password) {
+//       localStorage.setItem('isLoggedIn', 'true');
+//       localStorage.setItem('loggedInUser', JSON.stringify(state));
+//       return of({ success: true  }); 
+//     }
+
+//     return of({ success: false, message: 'Invalid state' }); // Simulate a failed login response state 200
+//   }
+
+//   logout(): void {
+//     localStorage.removeItem('isLoggedIn');
+//     localStorage.removeItem('loggedInUser');
+//   }
+
+//   isLoggedIn(): boolean {
+//     return localStorage.getItem('isLoggedIn') == 'true';
+//   }
+// }
+
+// export class AuthService {
+
+//   private apiUrl = 'https://localhost:7096/api/Customer'; 
+
+//   constructor(private http: HttpClient) {}
+
+//   register(state: any): Observable<any> {
+//     console.log(state);
+//     localStorage.setItem('registeredUser', JSON.stringify(state)); 
+//     return this.http.post<any>(`${this.apiUrl}/register`, state); // Post to the register endpoint
+//   }
+
+//   login(state: any): Observable<any> {
+//     const storedUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
+
+//     // Post the login state to the login endpoint
+//     return this.http.post<any>(`${this.apiUrl}/login`, state).pipe(
+//       tap(response => {
+//         if (response.success && state.email == storedUser.email && state.password == storedUser.password) {
+//           localStorage.setItem('isLoggedIn', 'true');
+//           localStorage.setItem('loggedInUser', JSON.stringify(state));
+//         }
+//       })
+//     );
+//   }
+
+//   logout(): void {
+//     localStorage.removeItem('isLoggedIn');
+//     localStorage.removeItem('loggedInUser');
+//   }
+
+//   isLoggedIn(): boolean {
+//     return localStorage.getItem('isLoggedIn') === 'true';
+//   }
+// }
+
+
+
 export class AuthService {
-  private apiUrl = 'assets/loginModel.json';
+  private apiUrl = 'https://localhost:7096/api/Customer'; // Replace with your API URL
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient , ) {}
 
-  register(status: any): Observable<any> {
-    console.log(status);
-    localStorage.setItem('registeredUser', JSON.stringify(status)); 
-    return this.http.post<any>(this.apiUrl, status);
+  register(user: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, user);
   }
 
-  login(status: any): Observable<any> {
-    const storedUser = JSON.parse(localStorage.getItem('registeredUser') || '{}');
-
-    if (status.email === storedUser.email && status.password == storedUser.password) {
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('loggedInUser', JSON.stringify(status));
-      return of({ success: true  }); 
-    }
-
-    return of({ success: false, message: 'Invalid status' }); // Simulate a failed login response status 200
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials);
   }
 
   logout(): void {
@@ -148,6 +210,6 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return localStorage.getItem('isLoggedIn') == 'true';
+    return localStorage.getItem('isLoggedIn') === 'true';
   }
 }
