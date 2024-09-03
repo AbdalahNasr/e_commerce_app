@@ -4,6 +4,7 @@ import { LoadingService } from '../service/loading.service';
 import { Product } from './../models/product-list-data';
 import { ProductService } from './../service/product.service';
 import { AuthService } from '../service/auth.service';
+import { ProductResponse } from '../models/product-response';
 
 @Component({
   selector: 'app-client-home-page',
@@ -270,13 +271,79 @@ import { AuthService } from '../service/auth.service';
 // }
 
  
+// export class ClientHomePageComponent implements OnInit, OnDestroy {
+//   Products: Product[] = [];
+//   currentIndex: number = 0;
+//   currentProductName: string = '';
+//   errorMessage: string = '';
+//   dataSubscription: Subscription | undefined; 
+//   isLoading: boolean = false; 
+//   userId: string = '';
+
+//   constructor(
+//     private _productService: ProductService,
+//     private loadingService: LoadingService,
+//     private authService: AuthService
+//   ) {}
+
+//   ngOnInit(): void {
+//     // debugger
+
+//     // Subscribe to loading state
+//     this.loadingService.loading$.subscribe(isLoading => {
+//       this.isLoading = isLoading;
+//     });
+
+//     this.userId = localStorage.getItem('userId') || '';
+
+//     console.log(this.userId);
+
+//     this.isLoading = true;
+//     this.dataSubscription = this._productService.getProducts(this.userId).subscribe(
+//       (response:ProductResponse) => {
+// console.log(response);
+//         this.isLoading = false;
+//         if (response.Message == "200" && response.Data && Array.isArray(response.Data)) {
+//           this.Products = response.Data;
+//           console.log(response.Data);
+          
+          
+//           if (this.Products.length > 0) {
+//             this.currentProductName = this.Products[this.currentIndex].name;
+//           }
+//         } else {
+//           this.errorMessage = response.Message || 'No products found or data is not an array.';
+//         }
+//       },
+//       (error) => {
+//         this.isLoading = false; // Set loading to false on error
+//         this.errorMessage = 'Failed to load product data.';
+//         console.error('Error fetching data:', error);
+//       }
+//     );
+//   }
+
+//   nextProduct(): void {
+//     if (this.Products.length > 0) {
+//       this.currentIndex = (this.currentIndex + 1) % this.Products.length;
+//       this.currentProductName = this.Products[this.currentIndex].name;
+//     }
+//   }
+
+//   ngOnDestroy(): void {
+//     if (this.dataSubscription) {
+//       this.dataSubscription.unsubscribe();
+//       console.log('Subscription has been cleaned up.');
+//     }
+//   }
+// } 
 export class ClientHomePageComponent implements OnInit, OnDestroy {
   Products: Product[] = [];
   currentIndex: number = 0;
   currentProductName: string = '';
   errorMessage: string = '';
-  dataSubscription: Subscription | undefined; 
-  isLoading: boolean = false; 
+  dataSubscription: Subscription | undefined;
+  isLoading: boolean = false;
   userId: string = '';
 
   constructor(
@@ -291,24 +358,30 @@ export class ClientHomePageComponent implements OnInit, OnDestroy {
       this.isLoading = isLoading;
     });
 
-   const customerId = this.userId = localStorage.getItem('userId') || '';
+    this.userId = localStorage.getItem('userId') || '';
 
-console.log(this.userId)
+    this.isLoading = true;
+    this.dataSubscription = this._productService.getProducts(this.userId).subscribe(
+      (response: ProductResponse) => {
+        debugger
+        this.isLoading = false;
 
-    this.dataSubscription = this._productService.getProducts(customerId).subscribe(
-      (res: Product[]) => {
-        this.isLoading = false;  
-        if (Array.isArray(res) && res.length > 0) {
-          this.Products = res;
+        if (response.statusCode == 200 && response.data && Array.isArray(response.data)) {
+          this.Products = response.data;
+          
           if (this.Products.length > 0) {
             this.currentProductName = this.Products[this.currentIndex].name;
+            console.log(this.Products);
           }
         } else {
-          this.errorMessage = 'No products found or data is not an array.';
+          this.errorMessage = response.message || 'No products found or data is not an array.';
+          console.log(this.errorMessage );
+          
+          console.log(this.Products);
         }
       },
       (error) => {
-        this.isLoading = false; // Set loading to false on error
+        this.isLoading = false;
         this.errorMessage = 'Failed to load product data.';
         console.error('Error fetching data:', error);
       }
@@ -325,7 +398,6 @@ console.log(this.userId)
   ngOnDestroy(): void {
     if (this.dataSubscription) {
       this.dataSubscription.unsubscribe();
-      console.log('Subscription has been cleaned up.');
     }
   }
 }

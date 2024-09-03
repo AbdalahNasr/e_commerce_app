@@ -82,7 +82,7 @@ export class CartComponent  {
   }
 
   private calculateSubtotal(): number {
-    return this.cartItems.reduce((total, item) => total + item.price * item.amount, 0);
+    return this.cartItems.reduce((total, item) => total + item.amount * item.amount, 0);
   }
 
   private calculateDiscount(amount: number): number {

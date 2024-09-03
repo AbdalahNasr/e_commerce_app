@@ -70,16 +70,16 @@ export class ProductListComponent implements OnInit {
 
   constructor(private _productService: ProductService) {}
 
-  ngOnInit(): void {
-    this._productService.getProducts().subscribe({
-      next: (res: any) => {
-        this.products = res;
-        console.log(this.products);
-      },
-      error: (error : any) => {
-        console.error('Failed to fetch products', error);
-        this.errorMessage = 'Failed to load products.';
-      }
-    });
-  }
+   ngOnInit(): void {
+  //   this._productService.getProducts().subscribe({
+  //     next: (res: any) => {
+  //       this.products = res;
+  //       console.log(this.products);
+  //     },
+  //     error: (error : any) => {
+  //       console.error('Failed to fetch products', error);
+  //       this.errorMessage = 'Failed to load products.';
+  //     }
+  //   });
+   }
 }

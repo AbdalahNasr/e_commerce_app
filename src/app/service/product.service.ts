@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders  } from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders  } from "@angular/common/http";
 import { catchError, map, Observable, throwError } from 'rxjs';
 import { Product } from '../models/product-list-data';
 import { WebSocketService } from './web-socket.service';
+import { ProductResponse } from '../models/product-response';
 
 @Injectable({
   providedIn: 'root'
@@ -69,7 +70,7 @@ import { WebSocketService } from './web-socket.service';
 //   // Get all products (with pagination, if needed)
 //   getProducts(): Observable<Product[]> {
 //     const userId = localStorage.getItem('userId'); 
-//     console.log(userId);
+//     console.log(userId); // with that number flag
     
 //     if (!userId) {
 //       console.error('User ID not found in local storage');
@@ -87,33 +88,34 @@ import { WebSocketService } from './web-socket.service';
 // }  
 
 export class ProductService {
-  private baseUrl = 'https://localhost:7096/api/Product/getallproducts';
 
-  constructor(private http: HttpClient) {}
+  private apiUrl = 'https://localhost:7096/api/Product/getallproducts'; 
 
-  getProducts(clientId ?: string  ): Observable<Product[]> {
-    if (!clientId) {
-      console.error('Customer ID is required to get products.');
-      return throwError('Customer ID is required');
+  constructor(private http: HttpClient) { }
+
+ getProducts(clientId: any ) : Observable<any> {
+    // const headers = new HttpHeaders({
+    //   'Content-Type': 'application/json'
+    // });
+
+return this.http.get<ProductResponse>(`${this.apiUrl}/${clientId}`)}
+
+private handleError(error: HttpErrorResponse) {
+  let errorMessage = 'An unknown error occurred!';
+  if (error.error instanceof ErrorEvent) {
+    // Client-side error
+    errorMessage = `Error: ${error.error.message}`;
+  } else {
+      // Server-side error
+      switch (error.status) {
+        case 400:
+          break;
+        default:
+          errorMessage = `Server returned code: ${error.status}, error message is: ${error.message}`;
+          break;
+      }
     }
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' }); 
-    const body = { clientId: clientId }; 
-    
-    return this.http.post<Product[]>(this.baseUrl, body, { headers }).pipe(
-      catchError(error => {
-        console.error('Error occurred while fetching products:', error);
-        return throwError(error);
-      })
-    );
+    return throwError(() => new Error(errorMessage));
   }
 
-  getProductById(id: string): Observable<Product> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get<Product>(url).pipe(
-      catchError(error => {
-        console.error('Error occurred while fetching product by ID:', error);
-        return throwError(error);
-      })
-    );
-  }
 }

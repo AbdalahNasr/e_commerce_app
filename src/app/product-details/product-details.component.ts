@@ -99,28 +99,28 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadProduct();
+    // this.loadProduct();
     this.loadCartItems();
   }
 
-  loadProduct(): void {
-    const id = this._activateRoute.snapshot.params['id'];
-    this._productService.getProductById(id).subscribe(
-      (res : any) => {
-        if (res || res == !id) {
-          this.product = res;
-          console.log('Product data loaded:', this.product);
-        } else {
-          this.errorMessage = `Product with ID ${id} not found.`;
-          this.router.navigate(['/**'])
-        }
-      },
-      (error: any) => {
-        this.errorMessage = `An error occurred while retrieving the product: ${error.message}`;
+  // loadProduct(): void {
+  //   const id = this._activateRoute.snapshot.params['id'];
+  //   this._productService.getProductById(id).subscribe(
+  //     (res : any) => {
+  //       if (res || res == !id) {
+  //         this.product = res;
+  //         console.log('Product data loaded:', this.product);
+  //       } else {
+  //         this.errorMessage = `Product with ID ${id} not found.`;
+  //         this.router.navigate(['/**'])
+  //       }
+  //     },
+  //     (error: any) => {
+  //       this.errorMessage = `An error occurred while retrieving the product: ${error.message}`;
     
-      }
-    );
-  }
+  //     }
+  //   );
+  // }
 
   loadCartItems(): void {
     const storedItems = localStorage.getItem('cartItems');
